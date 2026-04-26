@@ -1,1207 +1,1651 @@
-<!DOCTYPE html><html data-src-ver="bcfcce12" lang="en" style="--script-opacity: 0.65; --section-pad: 64px; --metric-pad: 24px; --card-pad: 24px; --why-pad: 22px;"><head>
+<!DOCTYPE html>
+<html data-src-ver="bcfcce12" lang="en"
+  style="--script-opacity: 0.65; --section-pad: 64px; --metric-pad: 24px; --card-pad: 24px; --why-pad: 22px;">
+
+<head>
 
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kothaluru &amp; Associates — Chartered Accountants</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kothaluru &amp; Associates — Chartered Accountants</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&amp;display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+    integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+    integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+    integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+    crossorigin="anonymous"></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  :root {
-    --gold: #b5933a;
-    --gold-light: #d4af6a;
-    --gold-muted: rgba(181,147,58,0.12);
-    --ink: #0f0f0f;
-    --ink-mid: #3a3a3a;
-    --ink-light: #7a7a7a;
-    --warm-white: #faf9f7;
-    --warm-grey: #f2f0eb;
-    --border: #e4e0d8;
-    --hero-bg: #faf6ee;
-    --sans: 'Plus Jakarta Sans', sans-serif;
-    --script: 'Cormorant Garamond', serif;
-    /* tweakable */
-    --script-opacity: 0.38;
-    --section-pad: 120px;
-    --metric-pad: 48px;
-    --card-pad: 44px;
-    --why-pad: 40px;
-  }
+    :root {
+      --gold: #2563a8;
+      --gold-light: #3a7bc8;
+      --gold-muted: rgba(37, 99, 168, 0.1);
+      --ink: #0d1f3c;
+      --ink-mid: #2a3f62;
+      --ink-light: #6280a8;
+      --warm-white: #f8fafd;
+      --warm-grey: #eaf0f8;
+      --border: #cddaee;
+      --hero-bg: #f0f5fb;
+      --sans: 'Plus Jakarta Sans', sans-serif;
+      --script: 'Cormorant Garamond', serif;
+      /* tweakable */
+      --script-opacity: 0.38;
+      --section-pad: 120px;
+      --metric-pad: 48px;
+      --card-pad: 44px;
+      --why-pad: 40px;
+    }
 
-  /* personality themes */
+    /* script presence */
+    .hero-headline-script,
+    .final-cta-script,
+    .section-title em,
+    .metric-num {
+      opacity: var(--script-opacity-el, 1);
+    }
 
-  /* ── NAVY: CA blue-forward, clean light backgrounds ── */
-  body.theme-navy {
-    --gold: #2563a8;
-    --gold-light: #3a7bc8;
-    --gold-muted: rgba(37,99,168,0.1);
-    --hero-bg: #f0f5fb;
-    --warm-white: #f8fafd;
-    --warm-grey: #eaf0f8;
-    --border: #cddaee;
-    --ink: #0d1f3c;
-    --ink-mid: #2a3f62;
-    --ink-light: #6280a8;
-  }
-  body.theme-navy nav { background: rgba(248,250,253,0.94) !important; border-bottom: 1px solid rgba(37,99,168,0.12) !important; }
-  body.theme-navy .nav-logo-main { color: #0d1f3c; }
-  body.theme-navy .nav-logo-sub { color: #2563a8; }
-  body.theme-navy .nav-links a { color: rgba(13,31,60,0.5); }
-  body.theme-navy .nav-links a:hover { color: #0d1f3c; }
-  body.theme-navy .nav-cta { border-color: #2563a8; color: #2563a8; }
-  body.theme-navy .nav-cta:hover { background: #2563a8; color: #fff; }
-  body.theme-navy .hero { background: linear-gradient(160deg, #f0f5fb 60%, #e2ecf8 100%); }
-  body.theme-navy .hero::before { background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(37,99,168,0.08) 0%, transparent 70%); }
-  body.theme-navy .hero-eyebrow { color: #2563a8; }
-  body.theme-navy .hero-headline { color: #0d1f3c; }
-  body.theme-navy .hero-headline-script { color: rgba(37,99,168,0.45); }
-  body.theme-navy .hero-sub { color: rgba(13,31,60,0.5); }
-  body.theme-navy .btn-ghost { color: rgba(13,31,60,0.55); border-color: rgba(13,31,60,0.2); }
-  body.theme-navy .btn-ghost:hover { color: #0d1f3c; border-color: rgba(13,31,60,0.5); }
-  body.theme-navy .hero-scroll span { color: rgba(13,31,60,0.3); }
-  body.theme-navy .scroll-line { background: linear-gradient(to bottom, rgba(13,31,60,0.25), transparent); }
-  body.theme-navy .about { background: #1a3560; }
-  body.theme-navy .about .section-eyebrow { color: #7aaee8; }
-  body.theme-navy .about .section-title { color: #fff; }
-  body.theme-navy .about .section-title em { color: rgba(255,255,255,0.5); }
-  body.theme-navy .final-cta { background: #0d1f3c; }
-  body.theme-navy .final-cta::before { background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(37,99,168,0.15) 0%, transparent 70%); }
-  body.theme-navy .final-cta-title { color: #fff; }
-  body.theme-navy .final-cta-script { color: rgba(122,174,232,0.6); }
-  body.theme-navy .final-cta-sub { color: rgba(255,255,255,0.5); }
-  body.theme-navy .final-cta .btn-ghost { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.25); }
-  body.theme-navy .final-cta .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
-  body.theme-navy footer { background: #09152a; border-top-color: rgba(255,255,255,0.06); }
-  body.theme-navy footer .footer-logo { color: #fff; }
-  body.theme-navy footer .footer-copy { color: rgba(255,255,255,0.3); }
-  body.theme-navy footer .footer-links a { color: rgba(255,255,255,0.3); }
-  body.theme-navy footer .footer-links a:hover { color: rgba(255,255,255,0.8); }
-  body.theme-navy .service-icon svg { stroke: #2563a8; }
-  body.theme-navy .service-arrow,
-  body.theme-navy .section-eyebrow,
-  body.theme-navy .metric-num,
-  body.theme-navy .testimonial-quote,
-  body.theme-navy .why-num,
-  body.theme-navy .final-cta-eyebrow { color: #2563a8; }
-  body.theme-navy .final-cta-eyebrow { color: #7aaee8; }
-  body.theme-navy .pillar-dot,
-  body.theme-navy .testimonial-divider,
-  body.theme-navy .service-card::after { background: #2563a8; }
-  body.theme-navy .testimonial-card:hover { border-color: #2563a8; }
-  body.theme-navy .btn-primary { background: #2563a8; }
-  body.theme-navy .btn-primary:hover { background: #3a7bc8; }
+    .hero-headline-script {
+      opacity: var(--script-opacity);
+    }
 
-  /* ── SAFFRON: warm, energetic, lighter ── */
-  body.theme-saffron {
-    --gold: #d45a14;
-    --gold-light: #e87830;
-    --gold-muted: rgba(212,90,20,0.10);
-    --hero-bg: #fdf5ed;
-    --warm-white: #fdf9f5;
-    --warm-grey: #f8efe4;
-    --border: #e8d2b8;
-    --ink: #2a1508;
-    --ink-mid: #5a3018;
-    --ink-light: #9a6840;
-  }
-  body.theme-saffron nav { background: rgba(253,249,245,0.94) !important; border-bottom: 1px solid rgba(212,90,20,0.12) !important; }
-  body.theme-saffron .nav-logo-main { color: #2a1508; }
-  body.theme-saffron .nav-logo-sub { color: #d45a14; }
-  body.theme-saffron .nav-links a { color: rgba(42,21,8,0.5); }
-  body.theme-saffron .nav-links a:hover { color: #2a1508; }
-  body.theme-saffron .nav-cta { border-color: #d45a14; color: #d45a14; }
-  body.theme-saffron .nav-cta:hover { background: #d45a14; color: #fff; }
-  body.theme-saffron .hero { background: linear-gradient(160deg, #fdf5ed 60%, #fbe8d4 100%); }
-  body.theme-saffron .hero::before { background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(212,90,20,0.07) 0%, transparent 70%); }
-  body.theme-saffron .hero-eyebrow { color: #d45a14; }
-  body.theme-saffron .hero-headline { color: #2a1508; }
-  body.theme-saffron .hero-headline-script { color: rgba(180,70,10,0.4); }
-  body.theme-saffron .hero-sub { color: rgba(42,21,8,0.5); }
-  body.theme-saffron .btn-ghost { color: rgba(42,21,8,0.55); border-color: rgba(42,21,8,0.2); }
-  body.theme-saffron .btn-ghost:hover { color: #2a1508; border-color: rgba(42,21,8,0.5); }
-  body.theme-saffron .hero-scroll span { color: rgba(42,21,8,0.3); }
-  body.theme-saffron .scroll-line { background: linear-gradient(to bottom, rgba(42,21,8,0.2), transparent); }
-  body.theme-saffron .about { background: #3d1a06; }
-  body.theme-saffron .about .section-eyebrow { color: #e8956a; }
-  body.theme-saffron .about .section-title { color: #fff; }
-  body.theme-saffron .about .section-title em { color: rgba(255,255,255,0.5); }
-  body.theme-saffron .final-cta { background: #2a1205; }
-  body.theme-saffron .final-cta::before { background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(212,90,20,0.12) 0%, transparent 70%); }
-  body.theme-saffron .final-cta-title { color: #fff; }
-  body.theme-saffron .final-cta-script { color: rgba(232,149,106,0.6); }
-  body.theme-saffron .final-cta-sub { color: rgba(255,255,255,0.5); }
-  body.theme-saffron .final-cta .btn-ghost { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.25); }
-  body.theme-saffron .final-cta .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
-  body.theme-saffron footer { background: #1a0c03; border-top-color: rgba(255,255,255,0.06); }
-  body.theme-saffron footer .footer-logo { color: #fff; }
-  body.theme-saffron footer .footer-copy { color: rgba(255,255,255,0.3); }
-  body.theme-saffron footer .footer-links a { color: rgba(255,255,255,0.3); }
-  body.theme-saffron footer .footer-links a:hover { color: rgba(255,255,255,0.8); }
-  body.theme-saffron .service-icon svg { stroke: #d45a14; }
-  body.theme-saffron .service-arrow,
-  body.theme-saffron .section-eyebrow,
-  body.theme-saffron .metric-num,
-  body.theme-saffron .testimonial-quote,
-  body.theme-saffron .why-num { color: #d45a14; }
-  body.theme-saffron .final-cta-eyebrow { color: #e8956a; }
-  body.theme-saffron .pillar-dot,
-  body.theme-saffron .testimonial-divider,
-  body.theme-saffron .service-card::after { background: #d45a14; }
-  body.theme-saffron .testimonial-card:hover { border-color: #d45a14; }
-  body.theme-saffron .btn-primary { background: #d45a14; }
-  body.theme-saffron .btn-primary:hover { background: #e87830; }
+    .final-cta-script {
+      opacity: var(--script-opacity);
+    }
 
-  /* ── FOREST: fresh, trustworthy green ── */
-  body.theme-forest {
-    --gold: #2a8a42;
-    --gold-light: #3aaa58;
-    --gold-muted: rgba(42,138,66,0.10);
-    --hero-bg: #f2faf4;
-    --warm-white: #f6fcf7;
-    --warm-grey: #e8f5ea;
-    --border: #c4dfc8;
-    --ink: #0c2212;
-    --ink-mid: #284830;
-    --ink-light: #5a8862;
-  }
-  body.theme-forest nav { background: rgba(246,252,247,0.94) !important; border-bottom: 1px solid rgba(42,138,66,0.12) !important; }
-  body.theme-forest .nav-logo-main { color: #0c2212; }
-  body.theme-forest .nav-logo-sub { color: #2a8a42; }
-  body.theme-forest .nav-links a { color: rgba(12,34,18,0.5); }
-  body.theme-forest .nav-links a:hover { color: #0c2212; }
-  body.theme-forest .nav-cta { border-color: #2a8a42; color: #2a8a42; }
-  body.theme-forest .nav-cta:hover { background: #2a8a42; color: #fff; }
-  body.theme-forest .hero { background: linear-gradient(160deg, #f2faf4 60%, #ddf0e1 100%); }
-  body.theme-forest .hero::before { background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(42,138,66,0.07) 0%, transparent 70%); }
-  body.theme-forest .hero-eyebrow { color: #2a8a42; }
-  body.theme-forest .hero-headline { color: #0c2212; }
-  body.theme-forest .hero-headline-script { color: rgba(30,100,48,0.4); }
-  body.theme-forest .hero-sub { color: rgba(12,34,18,0.5); }
-  body.theme-forest .btn-ghost { color: rgba(12,34,18,0.55); border-color: rgba(12,34,18,0.2); }
-  body.theme-forest .btn-ghost:hover { color: #0c2212; border-color: rgba(12,34,18,0.5); }
-  body.theme-forest .hero-scroll span { color: rgba(12,34,18,0.3); }
-  body.theme-forest .scroll-line { background: linear-gradient(to bottom, rgba(12,34,18,0.2), transparent); }
-  body.theme-forest .about { background: #0c2e18; }
-  body.theme-forest .about .section-eyebrow { color: #6ac882; }
-  body.theme-forest .about .section-title { color: #fff; }
-  body.theme-forest .about .section-title em { color: rgba(255,255,255,0.5); }
-  body.theme-forest .final-cta { background: #081a0e; }
-  body.theme-forest .final-cta::before { background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(42,138,66,0.12) 0%, transparent 70%); }
-  body.theme-forest .final-cta-title { color: #fff; }
-  body.theme-forest .final-cta-script { color: rgba(106,200,130,0.6); }
-  body.theme-forest .final-cta-sub { color: rgba(255,255,255,0.5); }
-  body.theme-forest .final-cta .btn-ghost { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.25); }
-  body.theme-forest .final-cta .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
-  body.theme-forest footer { background: #050f08; border-top-color: rgba(255,255,255,0.06); }
-  body.theme-forest footer .footer-logo { color: #fff; }
-  body.theme-forest footer .footer-copy { color: rgba(255,255,255,0.3); }
-  body.theme-forest footer .footer-links a { color: rgba(255,255,255,0.3); }
-  body.theme-forest footer .footer-links a:hover { color: rgba(255,255,255,0.8); }
-  body.theme-forest .service-icon svg { stroke: #2a8a42; }
-  body.theme-forest .service-arrow,
-  body.theme-forest .section-eyebrow,
-  body.theme-forest .metric-num,
-  body.theme-forest .testimonial-quote,
-  body.theme-forest .why-num { color: #2a8a42; }
-  body.theme-forest .final-cta-eyebrow { color: #6ac882; }
-  body.theme-forest .pillar-dot,
-  body.theme-forest .testimonial-divider,
-  body.theme-forest .service-card::after { background: #2a8a42; }
-  body.theme-forest .testimonial-card:hover { border-color: #2a8a42; }
-  body.theme-forest .btn-primary { background: #2a8a42; }
-  body.theme-forest .btn-primary:hover { background: #3aaa58; }
+    /* density */
+    section {
+      padding: var(--section-pad) 64px;
+    }
 
-  /* script presence */
-  .hero-headline-script,
-  .final-cta-script,
-  .section-title em,
-  .metric-num { opacity: var(--script-opacity-el, 1); }
-  .hero-headline-script { opacity: var(--script-opacity); }
-  .final-cta-script { opacity: var(--script-opacity); }
+    .about {
+      padding: var(--section-pad) 64px;
+    }
 
-  /* density */
-  section { padding: var(--section-pad) 64px; }
-  .about { padding: var(--section-pad) 64px; }
-  .final-cta { padding: var(--section-pad) 64px; }
-  .metric-item { padding: var(--metric-pad) 32px; }
-  .service-card { padding: var(--card-pad) 36px; }
-  .why-item { padding: var(--why-pad) 28px; }
+    .final-cta {
+      padding: var(--section-pad) 64px;
+    }
 
-  html { scroll-behavior: smooth; }
+    .metric-item {
+      padding: var(--metric-pad) 32px;
+    }
 
-  body {
-    font-family: var(--sans);
-    background: var(--warm-white);
-    color: var(--ink);
-    overflow-x: hidden;
-  }
+    .service-card {
+      padding: var(--card-pad) 36px;
+    }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 64px;
-    height: 72px;
-    background: rgba(250,246,238,0.94);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(181,147,58,0.15);
-    transition: background 0.3s;
-  }
-  .nav-logo {
-    display: flex; flex-direction: row; align-items: center; gap: 12px;
-  }
-  .nav-logo-ca {
-    height: 38px; width: auto; opacity: 0.95;
-  }
-  @keyframes blink {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 0.15; }
-  }
-  .nav-logo-divider {
-    width: 1px; height: 36px;
-    background: var(--gold);
-    display: inline-block;
-    margin: 0 6px;
-    animation: blink 1.6s ease-in-out infinite;
-    flex-shrink: 0;
-  }
-  body.theme-navy .nav-logo-divider { background: #2563a8; }
-  body.theme-saffron .nav-logo-divider { background: #d45a14; }
-  body.theme-forest .nav-logo-divider { background: #2a8a42; }
-  .nav-logo-text { display: flex; flex-direction: column; gap: 1px; }
-  .nav-logo-main {
-    font-family: var(--sans); font-weight: 700; font-size: 17px;
-    color: var(--ink); letter-spacing: 0.01em;
-  }
-  .nav-logo-sub {
-    font-family: var(--sans); font-size: 9px; font-weight: 400;
-    color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase;
-  }
-  .nav-links {
-    display: flex; gap: 36px; list-style: none;
-  }
-  .nav-links a {
-    color: rgba(15,15,15,0.55); text-decoration: none;
-    font-size: 13px; font-weight: 500; letter-spacing: 0.03em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-cta {
-    border: 1px solid var(--gold); color: var(--gold);
-    background: transparent; padding: 9px 22px;
-    font-family: var(--sans); font-size: 13px; font-weight: 600;
-    letter-spacing: 0.04em; cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    text-decoration: none;
-  }
-  .nav-cta:hover { background: var(--gold); color: #fff; }
+    .why-item {
+      padding: var(--why-pad) 28px;
+    }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--hero-bg);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center;
-    padding: 120px 64px 80px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(181,147,58,0.10) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-content {
-    position: relative; z-index: 1;
-    text-align: center;
-    width: 100%; max-width: 760px;
-    display: flex; flex-direction: column; align-items: center;
-  }
-  .hero-eyebrow {
-    font-family: var(--sans); font-size: 11px; font-weight: 600;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 20px; display: block;
-  }
-  .hero-headline {
-    font-family: var(--sans); font-weight: 800; font-size: 42px;
-    color: var(--ink); line-height: 1.1; letter-spacing: -0.02em;
-    display: block; margin-bottom: 12px;
-    white-space: nowrap;
-  }
-  .hero-headline-script {
-    font-family: var(--script); font-weight: 300; font-style: italic;
-    font-size: 28px;
-    color: rgba(181,147,58,0.65);
-    letter-spacing: 0.02em; line-height: 1.3;
-    display: block; margin-bottom: 28px;
-    white-space: nowrap;
-  }
-  .hero-sub {
-    font-size: 15px; font-weight: 400; line-height: 1.75;
-    color: var(--ink-light); letter-spacing: 0.01em;
-    display: block; margin-bottom: 36px;
-    max-width: 480px; margin-left: auto; margin-right: auto;
-  }
-  .hero-actions {
-    display: flex; gap: 14px; align-items: center; justify-content: center;
-  }
-  .hero-divider {
-    width: 48px; height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold), transparent);
-    margin: 32px auto 0;
-    opacity: 0.6;
-    display: block;
-  }
-  .btn-primary {
-    background: var(--gold); color: #fff; border: none;
-    padding: 15px 32px; font-family: var(--sans);
-    font-size: 13px; font-weight: 700; letter-spacing: 0.06em;
-    text-transform: uppercase; cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    text-decoration: none; display: inline-block;
-    white-space: nowrap;
-  }
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-  .btn-ghost {
-    background: transparent; color: var(--ink-light); border: 1px solid var(--border);
-    padding: 14px 28px; font-family: var(--sans);
-    font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
-    cursor: pointer; transition: color 0.2s, border-color 0.2s;
-    text-decoration: none; display: inline-block;
-  }
-  .btn-ghost:hover { color: var(--ink); border-color: var(--ink-light); }
-  .hero-scroll {
-    position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    opacity: 0; animation: fadeUp 0.8s 1.2s forwards;
-  }
-  .hero-scroll span { font-size: 10px; letter-spacing: 0.15em; color: var(--ink-light); text-transform: uppercase; opacity: 0.5; }
-  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s infinite; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* ── METRICS STRIP ── */
-  .metrics {
-    background: var(--warm-grey);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .metrics-inner {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    max-width: 1200px; margin: 0 auto;
-  }
-  .metric-item {
-    padding: 48px 32px; text-align: center;
-    border-right: 1px solid var(--border);
-    transition: background 0.2s;
-  }
-  .metric-item:last-child { border-right: none; }
-  .metric-item:hover { background: var(--warm-white); }
-  .metric-num {
-    font-family: var(--script); font-size: 56px; font-weight: 400;
-    color: var(--gold); line-height: 1; letter-spacing: -0.01em;
-  }
-  .metric-label {
-    margin-top: 8px; font-size: 11px; font-weight: 600;
-    letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light);
-  }
+    body {
+      font-family: var(--sans);
+      background: var(--warm-white);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
 
-  /* ── SECTION COMMON ── */
-  section { padding: 120px 64px; }
-  .section-eyebrow {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
-  }
-  .section-title {
-    font-family: var(--sans); font-weight: 800;
-    font-size: clamp(32px, 4vw, 52px); line-height: 1.1;
-    letter-spacing: -0.02em; color: var(--ink);
-  }
-  .section-title em {
-    font-family: var(--script); font-style: italic; font-weight: 400;
-    font-size: 1.15em; color: var(--ink-mid);
-  }
-  .section-body {
-    font-size: 16px; line-height: 1.8; color: var(--ink-light); font-weight: 400;
-  }
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 64px;
+      height: 72px;
+      background: rgba(248, 250, 253, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(37, 99, 168, 0.12);
+      transition: background 0.3s;
+    }
 
-  /* ── SERVICES ── */
-  .services { background: var(--warm-white); }
-  .services-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    max-width: 1200px; margin: 0 auto 56px;
-  }
-  .services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1px; background: var(--border);
-    max-width: 1200px; margin: 0 auto;
-  }
-  .service-card {
-    background: var(--warm-white); padding: 44px 36px;
-    cursor: pointer; position: relative; overflow: hidden;
-    transition: background 0.25s;
-    border: none;
-  }
-  .service-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 2px; background: var(--gold);
-    transition: width 0.3s ease;
-  }
-  .service-card:hover { background: var(--warm-grey); }
-  .service-card:hover::after { width: 100%; }
-  .service-icon {
-    width: 36px; height: 36px; margin-bottom: 24px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .service-icon svg { stroke: var(--gold); fill: none; stroke-width: 1.5; }
-  .service-card-title {
-    font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
-    margin-bottom: 10px; color: var(--ink);
-  }
-  .service-card-desc {
-    font-size: 13px; line-height: 1.65; color: var(--ink-light); font-weight: 400;
-  }
-  .service-arrow {
-    margin-top: 24px; font-size: 18px; color: var(--gold);
-    transition: transform 0.2s;
-  }
-  .service-card:hover .service-arrow { transform: translateX(4px); }
+    .nav-logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+    }
 
-  /* ── ABOUT ── */
-  .about {
-    background: #2c1e08; color: #fff;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 80px; align-items: center;
-    padding: 120px 64px;
-  }
-  .about .section-eyebrow { color: var(--gold); }
-  .about .section-title { color: #fff; }
-  .about .section-title em { color: rgba(255,255,255,0.5); }
-  .about-body { font-size: 16px; line-height: 1.85; color: rgba(255,255,255,0.5); margin-top: 20px; }
-  .about-pillars { margin-top: 40px; display: flex; flex-direction: column; gap: 0; }
-  .pillar {
-    display: flex; align-items: center; gap: 16px;
-    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
-    font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7);
-    letter-spacing: 0.01em;
-  }
-  .pillar:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
-  .pillar-dot { width: 6px; height: 6px; background: var(--gold); flex-shrink: 0; }
-  .about-visual {
-    position: relative; aspect-ratio: 4/5;
-    background: repeating-linear-gradient(
-      -45deg,
-      rgba(255,255,255,0.03),
-      rgba(255,255,255,0.03) 1px,
-      transparent 1px,
-      transparent 12px
-    );
-    border: 1px solid rgba(255,255,255,0.1);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .about-visual-label {
-    font-size: 11px; letter-spacing: 0.15em; color: rgba(255,255,255,0.2);
-    text-transform: uppercase; text-align: center; line-height: 2;
-  }
-  .about-visual-badge {
-    position: absolute; bottom: -16px; right: -16px;
-    background: var(--gold); color: #fff;
-    padding: 20px 24px; text-align: center;
-  }
-  .about-visual-badge-num {
-    font-family: var(--script); font-size: 36px; line-height: 1;
-  }
-  .about-visual-badge-text {
-    font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px;
-  }
+    .nav-logo-ca {
+      height: 38px;
+      width: auto;
+      opacity: 0.95;
+    }
 
-  /* ── WHY ── */
-  .why { background: var(--warm-grey); }
-  .why-inner { max-width: 1200px; margin: 0 auto; }
-  .why-header { margin-bottom: 64px; }
-  .why-grid {
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
-    background: var(--border);
-  }
-  .why-item {
-    background: var(--warm-grey); padding: 40px 28px;
-    transition: background 0.2s;
-  }
-  .why-item:hover { background: var(--warm-white); }
-  .why-num {
-    font-family: var(--script); font-size: 40px; color: var(--gold);
-    line-height: 1; margin-bottom: 20px;
-  }
-  .why-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
-  .why-desc { font-size: 13px; line-height: 1.65; color: var(--ink-light); }
+    @keyframes blink {
 
-  /* ── TESTIMONIALS ── */
-  .testimonials { background: var(--warm-white); }
-  .testimonials-inner { max-width: 1200px; margin: 0 auto; }
-  .testimonials-header { margin-bottom: 56px; }
-  .testimonials-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  }
-  .testimonial-card {
-    border: 1px solid var(--border); padding: 40px 32px;
-    background: var(--warm-white); transition: border-color 0.2s, transform 0.2s;
-  }
-  .testimonial-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-  .testimonial-quote {
-    font-family: var(--script); font-size: 48px; line-height: 1;
-    color: var(--gold); margin-bottom: 16px;
-  }
-  .testimonial-text {
-    font-size: 15px; line-height: 1.8; color: var(--ink-mid); font-weight: 400;
-    font-family: var(--script); font-style: italic;
-  }
-  .testimonial-divider {
-    width: 32px; height: 1px; background: var(--gold); margin: 24px 0;
-  }
-  .testimonial-name { font-size: 13px; font-weight: 700; color: var(--ink); }
-  .testimonial-role { font-size: 11px; color: var(--ink-light); margin-top: 2px; letter-spacing: 0.04em; }
+      0%,
+      100% {
+        opacity: 0.7;
+      }
 
-  /* ── FINAL CTA ── */
-  .final-cta {
-    background: #f5ede0; padding: 120px 64px;
-    text-align: center; position: relative; overflow: hidden;
-  }
-  .final-cta::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(181,147,58,0.08) 0%, transparent 70%);
-  }
-  .final-cta-eyebrow {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
-  }
-  .final-cta-title {
-    font-family: var(--sans); font-weight: 800;
-    font-size: clamp(36px, 5vw, 68px); line-height: 1.05;
-    color: var(--ink); letter-spacing: -0.02em; margin-bottom: 12px;
-  }
-  .final-cta-script {
-    font-family: var(--script); font-style: italic; font-weight: 300;
-    font-size: clamp(32px, 4.5vw, 60px); color: rgba(181,147,58,0.5);
-    display: block; margin-bottom: 40px; letter-spacing: 0.01em;
-  }
-  .final-cta-sub {
-    font-size: 15px; color: var(--ink-light); line-height: 1.7;
-    max-width: 440px; margin: 0 auto 40px;
-  }
-  .final-cta-actions { display: flex; gap: 14px; justify-content: center; }
+      50% {
+        opacity: 0.15;
+      }
+    }
 
-  /* ── FOOTER ── */
-  footer {
-    background: #f0e8d8; padding: 40px 64px;
-    display: flex; justify-content: space-between; align-items: center;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-  .footer-logo { font-weight: 700; font-size: 15px; color: var(--ink); }
-  .footer-copy { font-size: 12px; color: var(--ink-light); }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { font-size: 12px; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--ink); }
+    .nav-logo-divider {
+      width: 1px;
+      height: 36px;
+      background: var(--gold);
+      display: inline-block;
+      margin: 0 6px;
+      animation: blink 1.6s ease-in-out infinite;
+      flex-shrink: 0;
+    }
 
-  /* ── HERO ALIVE EFFECTS ── */
-  @keyframes heroFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-  }
-  @keyframes wordIn {
-    from { opacity: 0; transform: translateY(12px) skewY(2deg); filter: blur(4px); }
-    to   { opacity: 1; transform: translateY(0) skewY(0deg); filter: blur(0); }
-  }
-  @keyframes wordOut {
-    from { opacity: 1; transform: translateY(0) skewY(0deg); filter: blur(0); }
-    to   { opacity: 0; transform: translateY(-12px) skewY(-2deg); filter: blur(4px); }
-  }
-  @keyframes cursorGlow {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-  }
-  .hero-cursor-glow {
-    position: absolute; pointer-events: none;
-    width: 500px; height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(181,147,58,0.12) 0%, transparent 70%);
-    transform: translate(-50%, -50%);
-    transition: left 0.15s ease, top 0.15s ease;
-    z-index: 0;
-  }
-  .hero-content { position: relative; z-index: 1; }
-  .hero-word-cycle {
-    display: inline-block;
-    color: var(--gold);
-    min-width: 180px;
-    text-align: left;
-    position: relative;
-  }
-  .hero-word-cycle span {
-    display: inline-block;
-    animation: wordIn 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
-  }
-  .hero-word-cycle span.out {
-    position: absolute; left: 0; top: 0;
-    animation: wordOut 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
-  }
-  .hero-headline .letter {
-    display: inline-block;
-    transition: color 0.15s, transform 0.2s;
-    cursor: default;
-  }
-  .hero-headline .letter:hover {
-    color: var(--gold);
-    transform: translateY(-3px) scale(1.08);
-  }
-  .hero-eyebrow-char {
-    display: inline-block;
-    transition: color 0.1s, transform 0.15s;
-  }
-  .hero-eyebrow-char:hover {
-    color: #fff;
-    transform: translateY(-2px);
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.8; }
-  }
-  .reveal {
-    opacity: 0; transform: translateY(32px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible { opacity: 1; transform: none; }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 1024px) {
-    nav { padding: 0 32px; }
-    section { padding: 80px 32px; }
-    .about { padding: 80px 32px; gap: 48px; }
-    .final-cta { padding: 80px 32px; }
-    footer { padding: 32px; }
-    .services-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-    .why-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (max-width: 768px) {
-    nav { padding: 0 20px; }
-    .nav-links { display: none; }
-    section { padding: 64px 20px; }
-    .hero { padding: 100px 20px 60px; }
-    .metrics-inner { grid-template-columns: repeat(2, 1fr); }
-    .metric-item { border-bottom: 1px solid var(--border); }
-    .about { grid-template-columns: 1fr; padding: 64px 20px; }
-    .about-visual { display: none; }
-    .services-grid, .testimonials-grid, .why-grid { grid-template-columns: 1fr; }
-    .services-header { flex-direction: column; gap: 16px; }
-    footer { flex-direction: column; gap: 16px; text-align: center; }
-    .final-cta { padding: 64px 20px; }
-    .final-cta-actions { flex-direction: column; align-items: center; }
-  }
-</style>
-<body class="theme-forest" style="cursor: crosshair; font-family: &quot;Plus Jakarta Sans&quot;;" data-cc-id="cc-1">
+    .nav-logo-main {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+    }
 
-<!-- NAV -->
-<nav style="background: rgba(250, 246, 238, 0.94);">
-  <div class="nav-logo">
-    <img src="uploads/CA India Logo.png" alt="CA India" class="nav-logo-ca">
-    <div class="nav-logo-divider"></div>
-    <div class="nav-logo-text">
-      <div class="nav-logo-main">K&amp;A</div>
-      <div class="nav-logo-sub">Chartered Accountants</div>
+    .nav-logo-sub {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(15, 15, 15, 0.55);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .nav-cta {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      padding: 9px 22px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--hero-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 64px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(37, 99, 168, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      width: 100%;
+      max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .hero-headline {
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: 42px;
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      display: block;
+      margin-bottom: 12px;
+      white-space: nowrap;
+    }
+
+    .hero-headline-script {
+      font-family: var(--script);
+      font-weight: 300;
+      font-style: italic;
+      font-size: 28px;
+      color: rgba(37, 99, 168, 0.45);
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+      display: block;
+      margin-bottom: 28px;
+      white-space: nowrap;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--ink-light);
+      letter-spacing: 0.01em;
+      display: block;
+      margin-bottom: 36px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-divider {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 32px auto 0;
+      opacity: 0.6;
+      display: block;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      padding: 15px 32px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink-light);
+      border: 1px solid var(--border);
+      padding: 14px 28px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover {
+      color: var(--ink);
+      border-color: var(--ink-light);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.2s forwards;
+    }
+
+    .hero-scroll span {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--ink-light);
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    /* ── METRICS STRIP ── */
+    .metrics {
+      background: var(--warm-grey);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .metrics-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .metric-item {
+      padding: 48px 32px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .metric-item:last-child {
+      border-right: none;
+    }
+
+    .metric-item:hover {
+      background: var(--warm-white);
+    }
+
+    .metric-num {
+      font-family: var(--script);
+      font-size: 56px;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    .metric-label {
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    /* ── SECTION COMMON ── */
+    section {
+      padding: 120px 64px;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .section-title em {
+      font-family: var(--script);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.15em;
+      color: var(--ink-mid);
+    }
+
+    .section-body {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--ink-light);
+      font-weight: 400;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      background: var(--warm-white);
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      max-width: 1200px;
+      margin: 0 auto 56px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--warm-white);
+      padding: 44px 36px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.25s;
+      border: none;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: var(--warm-grey);
+    }
+
+    .service-card:hover::after {
+      width: 100%;
+    }
+
+    .service-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-icon svg {
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .service-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+
+    .service-card-desc {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--ink-light);
+      font-weight: 400;
+    }
+
+    .service-arrow {
+      margin-top: 24px;
+      font-size: 18px;
+      color: var(--gold);
+      transition: transform 0.2s;
+    }
+
+    .service-card:hover .service-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      background: #1a3560;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 120px 64px;
+    }
+
+    .about .section-eyebrow {
+      color: #7aaee8;
+    }
+
+    .about .section-title {
+      color: #fff;
+    }
+
+    .about .section-title em {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .about-body {
+      font-size: 16px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 20px;
+    }
+
+    .about-pillars {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pillar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.01em;
+    }
+
+    .pillar:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .pillar-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .about-visual {
+      position: relative;
+      aspect-ratio: 4/5;
+      background: repeating-linear-gradient(-45deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 1px,
+          transparent 12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-visual-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.2);
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .about-visual-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--gold);
+      color: #fff;
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    .about-visual-badge-num {
+      font-family: var(--script);
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .about-visual-badge-text {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── WHY ── */
+    .why {
+      background: var(--warm-grey);
+    }
+
+    .why-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .why-header {
+      margin-bottom: 64px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .why-item {
+      background: var(--warm-grey);
+      padding: 40px 28px;
+      transition: background 0.2s;
+    }
+
+    .why-item:hover {
+      background: var(--warm-white);
+    }
+
+    .why-num {
+      font-family: var(--script);
+      font-size: 40px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .why-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .why-desc {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--ink-light);
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--warm-white);
+    }
+
+    .testimonials-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials-header {
+      margin-bottom: 56px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+      background: var(--warm-white);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .testimonial-quote {
+      font-family: var(--script);
+      font-size: 48px;
+      line-height: 1;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      font-weight: 400;
+      font-family: var(--script);
+      font-style: italic;
+    }
+
+    .testimonial-divider {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      margin: 24px 0;
+    }
+
+    .testimonial-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .testimonial-role {
+      font-size: 11px;
+      color: var(--ink-light);
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: #0d1f3c;
+      padding: 120px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(37, 99, 168, 0.15) 0%, transparent 70%);
+    }
+
+    .final-cta-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #7aaee8;
+      margin-bottom: 24px;
+    }
+
+    .final-cta-title {
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: clamp(36px, 5vw, 68px);
+      line-height: 1.05;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .final-cta-script {
+      font-family: var(--script);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(32px, 4.5vw, 60px);
+      color: rgba(122, 174, 232, 0.6);
+      display: block;
+      margin-bottom: 40px;
+      letter-spacing: 0.01em;
+    }
+
+    .final-cta-sub {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.7;
+      max-width: 440px;
+      margin: 0 auto 40px;
+    }
+
+    .final-cta-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #09152a;
+      padding: 40px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-logo {
+      font-weight: 700;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ── HERO ALIVE EFFECTS ── */
+    @keyframes heroFloat {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes wordIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px) skewY(2deg);
+        filter: blur(4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) skewY(0deg);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes wordOut {
+      from {
+        opacity: 1;
+        transform: translateY(0) skewY(0deg);
+        filter: blur(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(-12px) skewY(-2deg);
+        filter: blur(4px);
+      }
+    }
+
+    @keyframes cursorGlow {
+
+      0%,
+      100% {
+        opacity: 0.6;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .hero-cursor-glow {
+      position: absolute;
+      pointer-events: none;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 168, 0.12) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: left 0.15s ease, top 0.15s ease;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-word-cycle {
+      display: inline-block;
+      color: var(--gold);
+      min-width: 180px;
+      text-align: left;
+      position: relative;
+    }
+
+    .hero-word-cycle span {
+      display: inline-block;
+      animation: wordIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .hero-word-cycle span.out {
+      position: absolute;
+      left: 0;
+      top: 0;
+      animation: wordOut 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .hero-headline .letter {
+      display: inline-block;
+      transition: color 0.15s, transform 0.2s;
+      cursor: default;
+    }
+
+    .hero-headline .letter:hover {
+      color: var(--gold);
+      transform: translateY(-3px) scale(1.08);
+    }
+
+    .hero-eyebrow-char {
+      display: inline-block;
+      transition: color 0.1s, transform 0.15s;
+    }
+
+    .hero-eyebrow-char:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav {
+        padding: 0 32px;
+      }
+
+      section {
+        padding: 80px 32px;
+      }
+
+      .about {
+        padding: 80px 32px;
+        gap: 48px;
+      }
+
+      .final-cta {
+        padding: 80px 32px;
+      }
+
+      footer {
+        padding: 32px;
+      }
+
+      .services-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 64px 20px;
+      }
+
+      .hero {
+        padding: 100px 20px 60px;
+      }
+
+      .metrics-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .metric-item {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        padding: 64px 20px;
+      }
+
+      .about-visual {
+        display: none;
+      }
+
+      .services-grid,
+      .testimonials-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-header {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .final-cta {
+        padding: 64px 20px;
+      }
+
+      .final-cta-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+<body style="cursor: crosshair; font-family: &quot;Plus Jakarta Sans&quot;;" data-cc-id="cc-1">
+
+  <!-- NAV -->
+  <nav style="background: rgba(248, 250, 253, 0.94);">
+    <div class="nav-logo">
+      <img src="assets/CA India Logo.png" alt="CA India" class="nav-logo-ca">
+      <div class="nav-logo-divider"></div>
+      <div class="nav-logo-text">
+        <div class="nav-logo-main">K&amp;A</div>
+        <div class="nav-logo-sub">Chartered Accountants</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#testimonials">Clients</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Schedule Consultation</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-cursor-glow" id="heroGlow"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow" id="heroEyebrow">Kothaluru &amp; Associates · Chartered Accountants · India</div>
+      <h1 class="hero-headline" id="heroHeadline">Precision in Numbers.</h1>
+      <div class="hero-headline-script" style="display: block; font-size: 38px;">Excellence in Advisory.</div>
+      <p class="hero-sub">
+        At Kothaluru &amp; Associates, we deliver clarity, compliance, and strategic financial solutions tailored for
+        modern businesses.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Schedule Consultation</a>
+        <a href="#services" class="btn-ghost">Explore Services →</a>
+      </div>
+      <div class="hero-divider" style="background-position: center center"></div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- METRICS STRIP -->
+  <div class="metrics">
+    <div class="metrics-inner">
+      <div class="metric-item reveal visible">
+        <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">200<span
+            style="font-size:0.5em;vertical-align:super">+</span></div>
+        <div class="metric-label">Clients Served</div>
+      </div>
+      <div class="metric-item reveal reveal-delay-1 visible">
+        <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">15<span
+            style="font-size:0.5em;vertical-align:super">+</span></div>
+        <div class="metric-label">Years of Experience</div>
+      </div>
+      <div class="metric-item reveal reveal-delay-2 visible">
+        <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">99<span
+            style="font-size:0.5em;vertical-align:super">%</span></div>
+        <div class="metric-label">Compliance Accuracy</div>
+      </div>
+      <div class="metric-item reveal reveal-delay-3 visible">
+        <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">12<span
+            style="font-size:0.5em;vertical-align:super">+</span></div>
+        <div class="metric-label">Industries Covered</div>
+      </div>
     </div>
   </div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#why">Why Us</a></li>
-    <li><a href="#testimonials">Clients</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Schedule Consultation</a>
-</nav>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-cursor-glow" id="heroGlow"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow" id="heroEyebrow">Kothaluru &amp; Associates · Chartered Accountants · India</div>
-    <h1 class="hero-headline" id="heroHeadline">Precision in Numbers.</h1>
-    <div class="hero-headline-script" style="display: block; font-size: 38px;">Excellence in Advisory.</div>
-    <p class="hero-sub">
-      At Kothaluru &amp; Associates, we deliver clarity, compliance, and strategic financial solutions tailored for modern businesses.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Schedule Consultation</a>
-      <a href="#services" class="btn-ghost">Explore Services →</a>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <div>
+        <div class="section-eyebrow reveal visible">Our Services</div>
+        <h2 class="section-title reveal reveal-delay-1 visible">Comprehensive <em>Financial Expertise</em></h2>
+      </div>
+      <a href="#contact" class="btn-ghost reveal visible"
+        style="border-color:var(--border);color:var(--ink-light);font-size:13px;padding:11px 22px;">View All Services
+        →</a>
     </div>
-    <div class="hero-divider" style="background-position: center center"></div>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
+    <div class="services-grid">
 
-<!-- METRICS STRIP -->
-<div class="metrics">
-  <div class="metrics-inner">
-    <div class="metric-item reveal visible">
-      <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">200<span style="font-size:0.5em;vertical-align:super">+</span></div>
-      <div class="metric-label">Clients Served</div>
-    </div>
-    <div class="metric-item reveal reveal-delay-1 visible">
-      <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">15<span style="font-size:0.5em;vertical-align:super">+</span></div>
-      <div class="metric-label">Years of Experience</div>
-    </div>
-    <div class="metric-item reveal reveal-delay-2 visible">
-      <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">99<span style="font-size:0.5em;vertical-align:super">%</span></div>
-      <div class="metric-label">Compliance Accuracy</div>
-    </div>
-    <div class="metric-item reveal reveal-delay-3 visible">
-      <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">12<span style="font-size:0.5em;vertical-align:super">+</span></div>
-      <div class="metric-label">Industries Covered</div>
-    </div>
-  </div>
-</div>
+      <div class="service-card reveal visible">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28">
+            <rect x="4" y="4" width="20" height="20" rx="1"></rect>
+            <line x1="8" y1="10" x2="20" y2="10"></line>
+            <line x1="8" y1="14" x2="20" y2="14"></line>
+            <line x1="8" y1="18" x2="14" y2="18"></line>
+          </svg>
+        </div>
+        <div class="service-card-title">Audit &amp; Assurance</div>
+        <div class="service-card-desc">Independent, transparent audits that build trust and strengthen your business
+          credibility.</div>
+        <div class="service-arrow">→</div>
+      </div>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="services-header">
+      <div class="service-card reveal reveal-delay-1 visible">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28">
+            <path d="M6 22 L14 6 L22 22"></path>
+            <line x1="9" y1="16" x2="19" y2="16"></line>
+          </svg>
+        </div>
+        <div class="service-card-title">Taxation &amp; Compliance</div>
+        <div class="service-card-desc">End-to-end GST, Income Tax, TDS management — zero-gap compliance, every time.
+        </div>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2 visible">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28">
+            <circle cx="14" cy="14" r="9"></circle>
+            <line x1="14" y1="9" x2="14" y2="14"></line>
+            <line x1="14" y1="14" x2="18" y2="17"></line>
+          </svg>
+        </div>
+        <div class="service-card-title">Business Advisory</div>
+        <div class="service-card-desc">Strategic consulting to drive growth, optimise capital, and navigate complex
+          decisions.</div>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1 visible">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28">
+            <rect x="4" y="8" width="20" height="14" rx="1"></rect>
+            <path d="M9 8 V6 a5 5 0 0 1 10 0 V8"></path>
+          </svg>
+        </div>
+        <div class="service-card-title">Accounting &amp; Outsourcing</div>
+        <div class="service-card-desc">Full-cycle bookkeeping and MIS reporting — accurate, timely, and completely
+          managed.</div>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2 visible">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28">
+            <path d="M14 4 L24 9 L24 19 L14 24 L4 19 L4 9 Z"></path>
+            <line x1="14" y1="4" x2="14" y2="24"></line>
+            <line x1="4" y1="14" x2="24" y2="14"></line>
+          </svg>
+        </div>
+        <div class="service-card-title">Startup &amp; Company Setup</div>
+        <div class="service-card-desc">From incorporation to operations — complete setup, structuring and regulatory
+          support.</div>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3 visible">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28">
+            <rect x="4" y="12" width="6" height="10" rx="0.5"></rect>
+            <rect x="11" y="8" width="6" height="14" rx="0.5"></rect>
+            <rect x="18" y="4" width="6" height="18" rx="0.5"></rect>
+          </svg>
+        </div>
+        <div class="service-card-title">Virtual CFO Services</div>
+        <div class="service-card-desc">C-suite financial intelligence on demand — forecasting, fundraising, and board
+          reporting.</div>
+        <div class="service-arrow">→</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
     <div>
-      <div class="section-eyebrow reveal visible">Our Services</div>
-      <h2 class="section-title reveal reveal-delay-1 visible">Comprehensive <em>Financial Expertise</em></h2>
-    </div>
-    <a href="#contact" class="btn-ghost reveal visible" style="border-color:var(--border);color:var(--ink-light);font-size:13px;padding:11px 22px;">View All Services →</a>
-  </div>
-  <div class="services-grid">
-
-    <div class="service-card reveal visible">
-      <div class="service-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28">
-          <rect x="4" y="4" width="20" height="20" rx="1"></rect>
-          <line x1="8" y1="10" x2="20" y2="10"></line>
-          <line x1="8" y1="14" x2="20" y2="14"></line>
-          <line x1="8" y1="18" x2="14" y2="18"></line>
-        </svg>
-      </div>
-      <div class="service-card-title">Audit &amp; Assurance</div>
-      <div class="service-card-desc">Independent, transparent audits that build trust and strengthen your business credibility.</div>
-      <div class="service-arrow">→</div>
-    </div>
-
-    <div class="service-card reveal reveal-delay-1 visible">
-      <div class="service-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28">
-          <path d="M6 22 L14 6 L22 22"></path>
-          <line x1="9" y1="16" x2="19" y2="16"></line>
-        </svg>
-      </div>
-      <div class="service-card-title">Taxation &amp; Compliance</div>
-      <div class="service-card-desc">End-to-end GST, Income Tax, TDS management — zero-gap compliance, every time.</div>
-      <div class="service-arrow">→</div>
-    </div>
-
-    <div class="service-card reveal reveal-delay-2 visible">
-      <div class="service-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28">
-          <circle cx="14" cy="14" r="9"></circle>
-          <line x1="14" y1="9" x2="14" y2="14"></line>
-          <line x1="14" y1="14" x2="18" y2="17"></line>
-        </svg>
-      </div>
-      <div class="service-card-title">Business Advisory</div>
-      <div class="service-card-desc">Strategic consulting to drive growth, optimise capital, and navigate complex decisions.</div>
-      <div class="service-arrow">→</div>
-    </div>
-
-    <div class="service-card reveal reveal-delay-1 visible">
-      <div class="service-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28">
-          <rect x="4" y="8" width="20" height="14" rx="1"></rect>
-          <path d="M9 8 V6 a5 5 0 0 1 10 0 V8"></path>
-        </svg>
-      </div>
-      <div class="service-card-title">Accounting &amp; Outsourcing</div>
-      <div class="service-card-desc">Full-cycle bookkeeping and MIS reporting — accurate, timely, and completely managed.</div>
-      <div class="service-arrow">→</div>
-    </div>
-
-    <div class="service-card reveal reveal-delay-2 visible">
-      <div class="service-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28">
-          <path d="M14 4 L24 9 L24 19 L14 24 L4 19 L4 9 Z"></path>
-          <line x1="14" y1="4" x2="14" y2="24"></line>
-          <line x1="4" y1="14" x2="24" y2="14"></line>
-        </svg>
-      </div>
-      <div class="service-card-title">Startup &amp; Company Setup</div>
-      <div class="service-card-desc">From incorporation to operations — complete setup, structuring and regulatory support.</div>
-      <div class="service-arrow">→</div>
-    </div>
-
-    <div class="service-card reveal reveal-delay-3 visible">
-      <div class="service-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28">
-          <rect x="4" y="12" width="6" height="10" rx="0.5"></rect>
-          <rect x="11" y="8" width="6" height="14" rx="0.5"></rect>
-          <rect x="18" y="4" width="6" height="18" rx="0.5"></rect>
-        </svg>
-      </div>
-      <div class="service-card-title">Virtual CFO Services</div>
-      <div class="service-card-desc">C-suite financial intelligence on demand — forecasting, fundraising, and board reporting.</div>
-      <div class="service-arrow">→</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div>
-    <div class="section-eyebrow reveal visible">About the Firm</div>
-    <h2 class="section-title reveal reveal-delay-1 visible">Advisory-first.<br><em>Partner-led.</em></h2>
-    <p class="about-body reveal reveal-delay-2 visible">
-      Kothaluru &amp; Associates is built on a singular belief: every business deserves access to the kind of financial clarity that drives confident decisions. We are a partner-led practice — our senior professionals are directly involved in every engagement, ensuring that the advice you receive is precise, relevant, and grounded in real-world expertise.
-    </p>
-    <div class="about-pillars">
-      <div class="pillar reveal reveal-delay-2 visible"><div class="pillar-dot"></div>Integrity-first approach to every engagement</div>
-      <div class="pillar reveal reveal-delay-3 visible"><div class="pillar-dot"></div>Partner-led, not delegated — senior attention always</div>
-      <div class="pillar reveal reveal-delay-4 visible"><div class="pillar-dot"></div>Technology-driven workflows for real-time visibility</div>
-      <div class="pillar reveal reveal-delay-5 visible"><div class="pillar-dot"></div>Cross-industry expertise across 12+ sectors</div>
-    </div>
-  </div>
-  <div class="about-visual reveal reveal-delay-2 visible">
-    <div class="about-visual-label">Partners &amp; Team<br>[ photo ]</div>
-    <div class="about-visual-badge">
-      <div class="about-visual-badge-num">15+</div>
-      <div class="about-visual-badge-text">Years of<br>Excellence</div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY CHOOSE US -->
-<section class="why" id="why">
-  <div class="why-inner">
-    <div class="why-header">
-      <div class="section-eyebrow reveal visible">Why K&amp;A</div>
-      <h2 class="section-title reveal reveal-delay-1 visible">What Sets Us <em>Apart</em></h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-item reveal visible">
-        <div class="why-num">01</div>
-        <div class="why-title">Integrity-First</div>
-        <div class="why-desc">Every recommendation is grounded in ethics. No shortcuts, no compromise.</div>
-      </div>
-      <div class="why-item reveal reveal-delay-1 visible">
-        <div class="why-num">02</div>
-        <div class="why-title">Partner-Led</div>
-        <div class="why-desc">Senior partners on every engagement — not just at onboarding.</div>
-      </div>
-      <div class="why-item reveal reveal-delay-2 visible">
-        <div class="why-num">03</div>
-        <div class="why-title">Industry Expertise</div>
-        <div class="why-desc">Deep domain knowledge across manufacturing, tech, real estate, and more.</div>
-      </div>
-      <div class="why-item reveal reveal-delay-3 visible">
-        <div class="why-num">04</div>
-        <div class="why-title">Tech-Driven</div>
-        <div class="why-desc">Modern tools for real-time reporting, cloud accounting, and workflow automation.</div>
-      </div>
-      <div class="why-item reveal reveal-delay-4 visible">
-        <div class="why-num">05</div>
-        <div class="why-title">Full Compliance</div>
-        <div class="why-desc">Comprehensive regulatory coverage — never miss a deadline or filing.</div>
+      <div class="section-eyebrow reveal visible">About the Firm</div>
+      <h2 class="section-title reveal reveal-delay-1 visible">Advisory-first.<br><em>Partner-led.</em></h2>
+      <p class="about-body reveal reveal-delay-2 visible">
+        Kothaluru &amp; Associates is built on a singular belief: every business deserves access to the kind of
+        financial clarity that drives confident decisions. We are a partner-led practice — our senior professionals are
+        directly involved in every engagement, ensuring that the advice you receive is precise, relevant, and grounded
+        in real-world expertise.
+      </p>
+      <div class="about-pillars">
+        <div class="pillar reveal reveal-delay-2 visible">
+          <div class="pillar-dot"></div>Integrity-first approach to every engagement
+        </div>
+        <div class="pillar reveal reveal-delay-3 visible">
+          <div class="pillar-dot"></div>Partner-led, not delegated — senior attention always
+        </div>
+        <div class="pillar reveal reveal-delay-4 visible">
+          <div class="pillar-dot"></div>Technology-driven workflows for real-time visibility
+        </div>
+        <div class="pillar reveal reveal-delay-5 visible">
+          <div class="pillar-dot"></div>Cross-industry expertise across 12+ sectors
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials" id="testimonials">
-  <div class="testimonials-inner">
-    <div class="testimonials-header">
-      <div class="section-eyebrow reveal visible">Client Voices</div>
-      <h2 class="section-title reveal reveal-delay-1 visible">Trusted by <em>Founders &amp; Leaders</em></h2>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal visible">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Kothaluru &amp; Associates brought the kind of rigour and clarity we never experienced with our previous advisors. Our compliance is airtight and our financials finally tell a story.</p>
-        <div class="testimonial-divider"></div>
-        <div class="testimonial-name">Ravi Shankar M.</div>
-        <div class="testimonial-role">Founder, TechScale Ventures</div>
-      </div>
-      <div class="testimonial-card reveal reveal-delay-1 visible">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">The Virtual CFO service was a game-changer during our Series A preparation. The partners were always available, deeply involved, and genuinely cared about our outcome.</p>
-        <div class="testimonial-divider"></div>
-        <div class="testimonial-name">Priya Desai</div>
-        <div class="testimonial-role">CEO, Greenfield Retail Pvt. Ltd.</div>
-      </div>
-      <div class="testimonial-card reveal reveal-delay-2 visible">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Exceptional tax planning saved us significantly this year. What impressed me most was their proactive approach — they flagged opportunities before we even asked.</p>
-        <div class="testimonial-divider"></div>
-        <div class="testimonial-name">Anil Kothari</div>
-        <div class="testimonial-role">Director, Kothari Industries</div>
+    <div class="about-visual reveal reveal-delay-2 visible">
+      <div class="about-visual-label">Partners &amp; Team<br>[ photo ]</div>
+      <div class="about-visual-badge">
+        <div class="about-visual-badge-num">15+</div>
+        <div class="about-visual-badge-text">Years of<br>Excellence</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta" id="contact">
-  <div class="final-cta-eyebrow reveal visible">Begin the Conversation</div>
-  <h2 class="final-cta-title reveal reveal-delay-1 visible">
-    Let's simplify your
-    <span class="final-cta-script" style="display: block; font-size: 44px;">financial complexity.</span>
-  </h2>
-  <p class="final-cta-sub reveal reveal-delay-2 visible">Schedule a complimentary 30-minute consultation with one of our partners — no obligations, just clarity.</p>
-  <div class="final-cta-actions reveal reveal-delay-3 visible">
-    <a href="mailto:hello@kothaluruassociates.in" class="btn-primary">Schedule Consultation</a>
-    <a href="tel:+910000000000" class="btn-ghost">Call Our Office</a>
-  </div>
-</section>
+  <!-- WHY CHOOSE US -->
+  <section class="why" id="why">
+    <div class="why-inner">
+      <div class="why-header">
+        <div class="section-eyebrow reveal visible">Why K&amp;A</div>
+        <h2 class="section-title reveal reveal-delay-1 visible">What Sets Us <em>Apart</em></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item reveal visible">
+          <div class="why-num">01</div>
+          <div class="why-title">Integrity-First</div>
+          <div class="why-desc">Every recommendation is grounded in ethics. No shortcuts, no compromise.</div>
+        </div>
+        <div class="why-item reveal reveal-delay-1 visible">
+          <div class="why-num">02</div>
+          <div class="why-title">Partner-Led</div>
+          <div class="why-desc">Senior partners on every engagement — not just at onboarding.</div>
+        </div>
+        <div class="why-item reveal reveal-delay-2 visible">
+          <div class="why-num">03</div>
+          <div class="why-title">Industry Expertise</div>
+          <div class="why-desc">Deep domain knowledge across manufacturing, tech, real estate, and more.</div>
+        </div>
+        <div class="why-item reveal reveal-delay-3 visible">
+          <div class="why-num">04</div>
+          <div class="why-title">Tech-Driven</div>
+          <div class="why-desc">Modern tools for real-time reporting, cloud accounting, and workflow automation.</div>
+        </div>
+        <div class="why-item reveal reveal-delay-4 visible">
+          <div class="why-num">05</div>
+          <div class="why-title">Full Compliance</div>
+          <div class="why-desc">Comprehensive regulatory coverage — never miss a deadline or filing.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div>
-    <div class="footer-logo">Kothaluru &amp; Associates</div>
-    <div class="footer-copy" style="margin-top:4px;">Chartered Accountants · Hyderabad, India</div>
-  </div>
-  <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#">Privacy</a>
-  </div>
-  <div class="footer-copy">© 2026 Kothaluru &amp; Associates. All rights reserved.</div>
-</footer>
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <div class="testimonials-header">
+        <div class="section-eyebrow reveal visible">Client Voices</div>
+        <h2 class="section-title reveal reveal-delay-1 visible">Trusted by <em>Founders &amp; Leaders</em></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal visible">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Kothaluru &amp; Associates brought the kind of rigour and clarity we never
+            experienced with our previous advisors. Our compliance is airtight and our financials finally tell a story.
+          </p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-name">Ravi Shankar M.</div>
+          <div class="testimonial-role">Founder, TechScale Ventures</div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1 visible">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The Virtual CFO service was a game-changer during our Series A preparation. The
+            partners were always available, deeply involved, and genuinely cared about our outcome.</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-name">Priya Desai</div>
+          <div class="testimonial-role">CEO, Greenfield Retail Pvt. Ltd.</div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2 visible">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Exceptional tax planning saved us significantly this year. What impressed me most
+            was their proactive approach — they flagged opportunities before we even asked.</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-name">Anil Kothari</div>
+          <div class="testimonial-role">Director, Kothari Industries</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="contact">
+    <div class="final-cta-eyebrow reveal visible">Begin the Conversation</div>
+    <h2 class="final-cta-title reveal reveal-delay-1 visible">
+      Let's simplify your
+      <span class="final-cta-script" style="display: block; font-size: 44px;">financial complexity.</span>
+    </h2>
+    <p class="final-cta-sub reveal reveal-delay-2 visible">Schedule a complimentary 30-minute consultation with one of
+      our partners — no obligations, just clarity.</p>
+    <div class="final-cta-actions reveal reveal-delay-3 visible">
+      <a href="mailto:hello@kothaluruassociates.in" class="btn-primary">Schedule Consultation</a>
+      <a href="tel:+910000000000" class="btn-ghost">Call Our Office</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">Kothaluru &amp; Associates</div>
+      <div class="footer-copy" style="margin-top:4px;">Chartered Accountants · Hyderabad, India</div>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#">Privacy</a>
+    </div>
+    <div class="footer-copy">© 2026 Kothaluru &amp; Associates. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Nav scroll state
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        nav.style.background = 'rgba(248,250,253,0.98)';
+      } else {
+        nav.style.background = 'rgba(248,250,253,0.94)';
+      }
     });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
+  </script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "scriptPresence": 3,
+      "density": "spacious"
+    }/*EDITMODE-END*/;
 
-  // Nav scroll state
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      nav.style.background = 'rgba(250,246,238,0.98)';
-    } else {
-      nav.style.background = 'rgba(250,246,238,0.94)';
+    function applyTweaks(tweaks) {
+      const root = document.documentElement;
+
+      // Script presence (0=none, 1=subtle, 2=balanced, 3=expressive)
+      const opacities = [0, 0.2, 0.38, 0.65];
+      const sizes = { hero: [0, '18px', '28px', '38px'], cta: [0, '22px', '32px', '44px'] };
+      const sp = tweaks.scriptPresence;
+      root.style.setProperty('--script-opacity', opacities[sp]);
+
+      const hScript = document.querySelector('.hero-headline-script');
+      const cScript = document.querySelector('.final-cta-script');
+      const metricNums = document.querySelectorAll('.metric-num');
+
+      if (hScript) {
+        hScript.style.display = sp === 0 ? 'none' : 'block';
+        hScript.style.fontSize = sizes.hero[sp] || '28px';
+      }
+      if (cScript) {
+        cScript.style.display = sp === 0 ? 'none' : 'block';
+        cScript.style.fontSize = sizes.cta[sp] || '32px';
+      }
+      // Metric numbers: at low script presence use sans-serif
+      metricNums.forEach(el => {
+        el.style.fontFamily = sp <= 1
+          ? 'var(--sans)'
+          : 'var(--script)';
+        el.style.fontWeight = sp <= 1 ? '800' : '400';
+        el.style.fontSize = sp <= 1 ? '40px' : '56px';
+      });
+
+      // Density
+      const pads = {
+        spacious: { section: '120px', metric: '48px', card: '44px', why: '40px' },
+        compact: { section: '64px', metric: '24px', card: '24px', why: '22px' },
+      };
+      const d = pads[tweaks.density] || pads.spacious;
+      root.style.setProperty('--section-pad', d.section);
+      root.style.setProperty('--metric-pad', d.metric);
+      root.style.setProperty('--card-pad', d.card);
+      root.style.setProperty('--why-pad', d.why);
     }
-  });
-</script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-<script type="text/babel">
-const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "personality": "navy",
-  "scriptPresence": 3,
-  "density": "spacious"
-}/*EDITMODE-END*/;
 
-function applyTweaks(tweaks) {
-  const root = document.documentElement;
-  const body = document.body;
+    function KATweaks() {
+      const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
 
-  // Personality
-  body.classList.remove('theme-navy', 'theme-saffron', 'theme-forest');
-  if (tweaks.personality === 'navy') body.classList.add('theme-navy');
-  if (tweaks.personality === 'saffron') body.classList.add('theme-saffron');
-  if (tweaks.personality === 'forest') body.classList.add('theme-forest');
+      React.useEffect(() => { if (tweaks) applyTweaks(tweaks); }, [tweaks]);
 
-  // Script presence (0=none, 1=subtle, 2=balanced, 3=expressive)
-  const opacities = [0, 0.2, 0.38, 0.65];
-  const sizes = { hero: [0, '18px', '28px', '38px'], cta: [0, '22px', '32px', '44px'] };
-  const sp = tweaks.scriptPresence;
-  root.style.setProperty('--script-opacity', opacities[sp]);
+      if (!tweaks) return null;
 
-  const hScript = document.querySelector('.hero-headline-script');
-  const cScript = document.querySelector('.final-cta-script');
-  const metricNums = document.querySelectorAll('.metric-num');
+      return (
+        <TweaksPanel>
+          <TweakSection label="Script Presence">
+            <TweakSlider
+              id="scriptPresence"
+              min={0} max={3} step={1}
+              value={tweaks.scriptPresence}
+              onChange={v => setTweak('scriptPresence', v)}
+              formatValue={v => ['None', 'Subtle', 'Balanced', 'Expressive'][v]}
+            />
+          </TweakSection>
 
-  if (hScript) {
-    hScript.style.display = sp === 0 ? 'none' : 'block';
-    hScript.style.fontSize = sizes.hero[sp] || '28px';
-  }
-  if (cScript) {
-    cScript.style.display = sp === 0 ? 'none' : 'block';
-    cScript.style.fontSize = sizes.cta[sp] || '32px';
-  }
-  // Metric numbers: at low script presence use sans-serif
-  metricNums.forEach(el => {
-    el.style.fontFamily = sp <= 1
-      ? 'var(--sans)'
-      : 'var(--script)';
-    el.style.fontWeight = sp <= 1 ? '800' : '400';
-    el.style.fontSize = sp <= 1 ? '40px' : '56px';
-  });
-
-  // Density
-  const pads = {
-    spacious:  { section: '120px', metric: '48px', card: '44px', why: '40px' },
-    compact:   { section: '64px',  metric: '24px', card: '24px', why: '22px' },
-  };
-  const d = pads[tweaks.density] || pads.spacious;
-  root.style.setProperty('--section-pad', d.section);
-  root.style.setProperty('--metric-pad', d.metric);
-  root.style.setProperty('--card-pad', d.card);
-  root.style.setProperty('--why-pad', d.why);
-}
-
-function KATweaks() {
-  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
-
-  React.useEffect(() => { if (tweaks) applyTweaks(tweaks); }, [tweaks]);
-
-  if (!tweaks) return null;
-
-  return (
-    <TweaksPanel>
-      <TweakSection label="Personality">
-        <TweakRadio
-          id="personality"
-          value={tweaks.personality}
-          options={[
-            { value: 'prestigious', label: 'Classic Gold' },
-            { value: 'navy',        label: 'CA Navy'     },
-            { value: 'saffron',     label: 'Saffron'     },
-            { value: 'forest',      label: 'Forest'      },
-          ]}
-          onChange={v => setTweak('personality', v)}
-        />
-      </TweakSection>
-
-      <TweakSection label="Script Presence">
-        <TweakSlider
-          id="scriptPresence"
-          min={0} max={3} step={1}
-          value={tweaks.scriptPresence}
-          onChange={v => setTweak('scriptPresence', v)}
-          formatValue={v => ['None','Subtle','Balanced','Expressive'][v]}
-        />
-      </TweakSection>
-
-      <TweakSection label="Density">
-        <TweakRadio
-          id="density"
-          value={tweaks.density}
-          options={[
-            { value: 'spacious', label: 'Spacious' },
-            { value: 'compact',  label: 'Compact'  },
-          ]}
-          onChange={v => setTweak('density', v)}
-        />
-      </TweakSection>
-    </TweaksPanel>
-  );
-}
-
-window.KATweaks = KATweaks;
-
-setTimeout(() => {
-  let mountEl = document.getElementById('tweaks-root');
-  if (!mountEl) {
-    mountEl = document.createElement('div');
-    mountEl.id = 'tweaks-root';
-    document.body.appendChild(mountEl);
-  }
-  const tweaksRoot = ReactDOM.createRoot(mountEl);
-  const App = window.KATweaks;
-  tweaksRoot.render(<App />);
-}, 0);
-</script>
-
-<script>
-  // ── HERO ALIVE EFFECTS ──
-
-  // 1. Split headline into hoverable letters
-  const headline = document.getElementById('heroHeadline');
-  if (headline) {
-    headline.innerHTML = headline.textContent.split('').map(ch =>
-      ch === ' ' ? ' ' : `<span class="letter">${ch}</span>`
-    ).join('');
-  }
-
-  // 2. Split eyebrow into hoverable chars
-  const eyebrow = document.getElementById('heroEyebrow');
-  if (eyebrow) {
-    eyebrow.innerHTML = eyebrow.textContent.split('').map(ch =>
-      ch === ' ' ? ' ' : `<span class="hero-eyebrow-char">${ch}</span>`
-    ).join('');
-  }
-
-  // 3. Cursor-tracking glow
-  const glow = document.getElementById('heroGlow');
-  const heroSection = document.querySelector('.hero');
-  if (glow && heroSection) {
-    heroSection.addEventListener('mousemove', (e) => {
-      const rect = heroSection.getBoundingClientRect();
-      glow.style.left = (e.clientX - rect.left) + 'px';
-      glow.style.top  = (e.clientY - rect.top)  + 'px';
-    });
-    heroSection.addEventListener('mouseleave', () => {
-      glow.style.left = '50%';
-      glow.style.top  = '40%';
-    });
-  }
-
-  // 4. Cycling word in hero sub paragraph
-  const cycleWords = ['clarity', 'compliance', 'precision', 'integrity', 'excellence'];
-  const heroPara = document.querySelector('.hero-sub');
-  if (heroPara) {
-    let wi = 0;
-    const original = heroPara.innerHTML;
-    // Replace "clarity" with a styled cycling span
-    heroPara.innerHTML = original.replace('clarity', `<span id="cycleWord" style="color:var(--gold);font-weight:600;display:inline-block;min-width:100px;transition:opacity 0.3s,transform 0.3s">${cycleWords[0]}</span>`);
-    const cycleEl = document.getElementById('cycleWord');
-    if (cycleEl) {
-      setInterval(() => {
-        cycleEl.style.opacity = '0';
-        cycleEl.style.transform = 'translateY(-6px)';
-        setTimeout(() => {
-          wi = (wi + 1) % cycleWords.length;
-          cycleEl.textContent = cycleWords[wi];
-          cycleEl.style.opacity = '1';
-          cycleEl.style.transform = 'translateY(0)';
-        }, 300);
-      }, 2200);
-      cycleEl.style.display = 'inline-block';
-      cycleEl.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          <TweakSection label="Density">
+            <TweakRadio
+              id="density"
+              value={tweaks.density}
+              options={[
+                { value: 'spacious', label: 'Spacious' },
+                { value: 'compact', label: 'Compact' },
+              ]}
+              onChange={v => setTweak('density', v)}
+            />
+          </TweakSection>
+        </TweaksPanel>
+      );
     }
-  }
 
-  // 5. Magnetic button effect on hero CTAs
-  document.querySelectorAll('.hero-actions .btn-primary, .hero-actions .btn-ghost').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const r = btn.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width / 2;
-      const y = e.clientY - r.top - r.height / 2;
-      btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+    window.KATweaks = KATweaks;
+
+    setTimeout(() => {
+      let mountEl = document.getElementById('tweaks-root');
+      if (!mountEl) {
+        mountEl = document.createElement('div');
+        mountEl.id = 'tweaks-root';
+        document.body.appendChild(mountEl);
+      }
+      const tweaksRoot = ReactDOM.createRoot(mountEl);
+      const App = window.KATweaks;
+      tweaksRoot.render(<App />);
+    }, 0);
+  </script>
+
+  <script>
+    // ── HERO ALIVE EFFECTS ──
+
+    // 1. Split headline into hoverable letters
+    const headline = document.getElementById('heroHeadline');
+    if (headline) {
+      headline.innerHTML = headline.textContent.split('').map(ch =>
+        ch === ' ' ? ' ' : `<span class="letter">${ch}</span>`
+      ).join('');
+    }
+
+    // 2. Split eyebrow into hoverable chars
+    const eyebrow = document.getElementById('heroEyebrow');
+    if (eyebrow) {
+      eyebrow.innerHTML = eyebrow.textContent.split('').map(ch =>
+        ch === ' ' ? ' ' : `<span class="hero-eyebrow-char">${ch}</span>`
+      ).join('');
+    }
+
+    // 3. Cursor-tracking glow
+    const glow = document.getElementById('heroGlow');
+    const heroSection = document.querySelector('.hero');
+    if (glow && heroSection) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        glow.style.left = (e.clientX - rect.left) + 'px';
+        glow.style.top = (e.clientY - rect.top) + 'px';
+      });
+      heroSection.addEventListener('mouseleave', () => {
+        glow.style.left = '50%';
+        glow.style.top = '40%';
+      });
+    }
+
+    // 4. Cycling word in hero sub paragraph
+    const cycleWords = ['clarity', 'compliance', 'precision', 'integrity', 'excellence'];
+    const heroPara = document.querySelector('.hero-sub');
+    if (heroPara) {
+      let wi = 0;
+      const original = heroPara.innerHTML;
+      // Replace "clarity" with a styled cycling span
+      heroPara.innerHTML = original.replace('clarity', `<span id="cycleWord" style="color:var(--gold);font-weight:600;display:inline-block;min-width:100px;transition:opacity 0.3s,transform 0.3s">${cycleWords[0]}</span>`);
+      const cycleEl = document.getElementById('cycleWord');
+      if (cycleEl) {
+        setInterval(() => {
+          cycleEl.style.opacity = '0';
+          cycleEl.style.transform = 'translateY(-6px)';
+          setTimeout(() => {
+            wi = (wi + 1) % cycleWords.length;
+            cycleEl.textContent = cycleWords[wi];
+            cycleEl.style.opacity = '1';
+            cycleEl.style.transform = 'translateY(0)';
+          }, 300);
+        }, 2200);
+        cycleEl.style.display = 'inline-block';
+        cycleEl.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      }
+    }
+
+    // 5. Magnetic button effect on hero CTAs
+    document.querySelectorAll('.hero-actions .btn-primary, .hero-actions .btn-ghost').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width / 2;
+        const y = e.clientY - r.top - r.height / 2;
+        btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
     });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
-    });
-  });
-</script>
-</body></html>
+  </script>
+</body>
+
+</html>
