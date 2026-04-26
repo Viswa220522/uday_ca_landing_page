@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K&A — Wireframe Explorations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #1a1a1a; font-family: 'Space Mono', monospace; }
+
+  /* Wireframe sketch styles */
+  .wf { font-family: 'Caveat', cursive; background: #fafaf8; }
+  .wf-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 2px solid #222; }
+  .wf-logo { font-weight: 700; font-size: 13px; letter-spacing: 0.5px; }
+  .wf-nav-links { display: flex; gap: 12px; font-size: 11px; color: #555; }
+  .wf-btn { border: 1.5px solid #222; padding: 4px 10px; font-size: 11px; font-family: 'Caveat', cursive; background: transparent; cursor: pointer; }
+  .wf-btn.filled { background: #222; color: #fff; }
+  .wf-btn.gold { background: #b5933a; border-color: #b5933a; color: #fff; }
+  .box { background: #e8e6e0; border: 1.5px solid #bbb; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #888; text-align: center; font-family: 'Space Mono', monospace; }
+  .hatch { background: repeating-linear-gradient(45deg, #e8e6e0, #e8e6e0 3px, #d8d5cc 3px, #d8d5cc 6px); border: 1.5px solid #bbb; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #777; text-align: center; font-family: 'Space Mono', monospace; }
+  .section-label { font-size: 9px; color: #aaa; font-family: 'Space Mono'; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .wf-divider { border: none; border-top: 1.5px dashed #ccc; margin: 8px 0; }
+  .tag { display: inline-block; background: #b5933a22; border: 1px solid #b5933a66; color: #8a6d28; font-size: 9px; padding: 1px 6px; font-family: 'Space Mono'; border-radius: 2px; }
+  .tag.dark { background: #22222215; border-color: #22222240; color: #555; }
+  .annotation { font-family: 'Caveat'; font-size: 12px; color: #b5933a; }
+  .arrow { font-size: 14px; color: #b5933a; }
+</style>
+</head>
+<body>
+<script type="text/babel">
+
+/* ============================================================
+   WIREFRAME A — "Editorial Vertical" 
+   Large typographic hero, two-column about, card grid services
+   ============================================================ */
+function WireframeA() {
+  return (
+    <div className="wf" style={{width:'100%',fontSize:12}}>
+      {/* NAV */}
+      <div className="wf-nav">
+        <div>
+          <div className="wf-logo">K&A</div>
+          <div style={{fontSize:8,color:'#999',fontFamily:'Space Mono'}}>CHARTERED ACCOUNTANTS</div>
+        </div>
+        <div className="wf-nav-links">
+          <span>About</span><span>Services</span><span>Why Us</span><span>Contact</span>
+        </div>
+        <button className="wf-btn gold">Schedule Consultation</button>
+      </div>
+
+      {/* HERO — full-width typographic */}
+      <div style={{padding:'40px 20px 30px',borderBottom:'2px solid #222'}}>
+        <div className="section-label">Est. 20XX · Hyderabad, India</div>
+        <div style={{fontFamily:'Caveat',fontSize:32,fontWeight:700,lineHeight:1.1,maxWidth:'60%',marginBottom:10}}>
+          Precision in Numbers.<br/>Excellence in Advisory.
+        </div>
+        <div style={{fontSize:11,color:'#666',maxWidth:'45%',lineHeight:1.6,marginBottom:16,fontFamily:'Space Mono'}}>
+          Clarity · Compliance · Strategic financial solutions for modern businesses.
+        </div>
+        <div style={{display:'flex',gap:8}}>
+          <button className="wf-btn filled">Schedule Consultation</button>
+          <button className="wf-btn">Explore Services →</button>
+        </div>
+        <div style={{marginTop:16,display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:8}}>
+          {['200+ Clients','15+ Yrs Exp','99% Accuracy','12 Industries'].map(m=>(
+            <div key={m} style={{borderTop:'2px solid #222',paddingTop:6}}>
+              <div style={{fontFamily:'Caveat',fontSize:18,fontWeight:700}}>{m.split(' ')[0]}</div>
+              <div style={{fontSize:9,color:'#888',fontFamily:'Space Mono'}}>{m.split(' ').slice(1).join(' ')}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ABOUT — two column */}
+      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',borderBottom:'1.5px dashed #ccc'}}>
+        <div style={{padding:'20px',borderRight:'1.5px dashed #ccc'}}>
+          <div className="section-label">About Us</div>
+          <div style={{fontFamily:'Caveat',fontSize:20,fontWeight:700,marginBottom:8}}>Advisory-first. Partner-led.</div>
+          <div style={{height:40,background:'#f0ede6',border:'1px solid #ddd',marginBottom:8}}></div>
+          <div style={{height:40,background:'#f0ede6',border:'1px solid #ddd'}}></div>
+        </div>
+        <div className="hatch" style={{minHeight:100}}>[ office / team photo ]</div>
+      </div>
+
+      {/* SERVICES */}
+      <div style={{padding:'16px 20px',borderBottom:'1.5px dashed #ccc'}}>
+        <div className="section-label">Our Services</div>
+        <div style={{fontFamily:'Caveat',fontSize:18,fontWeight:700,marginBottom:10}}>What We Do</div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:8}}>
+          {['Audit & Assurance','Taxation & Compliance','Business Advisory','Accounting & Outsourcing','Startup & Company Setup','Virtual CFO Services'].map(s=>(
+            <div key={s} style={{border:'1.5px solid #ccc',padding:'10px',background:'#fff'}}>
+              <div style={{width:20,height:20,border:'1.5px solid #b5933a',marginBottom:6,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,color:'#b5933a'}}>◇</div>
+              <div style={{fontFamily:'Caveat',fontSize:14,fontWeight:700,marginBottom:4}}>{s}</div>
+              <div style={{height:12,background:'#eee',marginBottom:3}}></div>
+              <div style={{height:12,background:'#eee',width:'70%'}}></div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* WHY + TESTIMONIALS inline */}
+      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',borderBottom:'1.5px dashed #ccc'}}>
+        <div style={{padding:'16px',borderRight:'1.5px dashed #ccc'}}>
+          <div className="section-label">Why Choose Us</div>
+          {['Integrity-first approach','Partner-led service','Industry expertise','Technology-driven','Compliance focus'].map(i=>(
+            <div key={i} style={{display:'flex',alignItems:'center',gap:8,marginBottom:6,fontSize:11}}>
+              <span style={{color:'#b5933a',fontSize:14}}>—</span>{i}
+            </div>
+          ))}
+        </div>
+        <div style={{padding:'16px'}}>
+          <div className="section-label">Testimonials</div>
+          {[1,2].map(i=>(
+            <div key={i} style={{border:'1.5px solid #ddd',padding:'8px',marginBottom:8,background:'#fff'}}>
+              <div style={{height:10,background:'#eee',marginBottom:4,width:'90%'}}></div>
+              <div style={{height:10,background:'#eee',width:'70%',marginBottom:6}}></div>
+              <div style={{fontSize:10,color:'#999',fontFamily:'Space Mono'}}>— Client Name, Company</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA FOOTER */}
+      <div style={{padding:'20px',textAlign:'center',background:'#222',color:'#fff'}}>
+        <div style={{fontFamily:'Caveat',fontSize:22,fontWeight:700,marginBottom:8}}>Let's simplify your financial complexity.</div>
+        <button className="wf-btn gold">Get in Touch →</button>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   WIREFRAME B — "Asymmetric Split" 
+   Sticky left sidebar nav, scrolling right content
+   ============================================================ */
+function WireframeB() {
+  return (
+    <div className="wf" style={{width:'100%',fontSize:12,display:'grid',gridTemplateColumns:'100px 1fr',minHeight:600}}>
+      {/* SIDEBAR */}
+      <div style={{borderRight:'2px solid #222',padding:'12px 8px',display:'flex',flexDirection:'column',justifyContent:'space-between',background:'#111',color:'#fff'}}>
+        <div>
+          <div style={{fontFamily:'Caveat',fontSize:13,fontWeight:700,marginBottom:4}}>K&A</div>
+          <div style={{fontSize:7,color:'#888',fontFamily:'Space Mono',marginBottom:16,lineHeight:1.4}}>CHARTERED<br/>ACCOUNTANTS</div>
+          <div style={{display:'flex',flexDirection:'column',gap:10}}>
+            {['About','Services','Why Us','Trust','Testimonials','Contact'].map(l=>(
+              <div key={l} style={{fontSize:9,color:'#aaa',fontFamily:'Space Mono',cursor:'pointer'}}>{l}</div>
+            ))}
+          </div>
+        </div>
+        <div style={{fontSize:8,color:'#555',fontFamily:'Space Mono',lineHeight:1.5}}>Hyderabad<br/>India</div>
+      </div>
+
+      {/* MAIN CONTENT */}
+      <div>
+        {/* Hero */}
+        <div style={{padding:'24px 20px 20px',borderBottom:'1.5px dashed #ccc',position:'relative'}}>
+          <div style={{position:'absolute',top:16,right:16}}>
+            <button className="wf-btn gold" style={{fontSize:10}}>Consult →</button>
+          </div>
+          <div style={{fontFamily:'Caveat',fontSize:28,fontWeight:700,lineHeight:1.1,maxWidth:'55%',marginBottom:8}}>
+            Precision in Numbers.<br/>Excellence in Advisory.
+          </div>
+          <div style={{fontSize:10,color:'#777',maxWidth:'50%',lineHeight:1.5,marginBottom:12,fontFamily:'Space Mono'}}>
+            Strategic financial solutions for modern businesses.
+          </div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:6,maxWidth:'70%'}}>
+            {['200+','15+','99%','12'].map((n,i)=>(
+              <div key={i} style={{textAlign:'center',border:'1px solid #ddd',padding:'6px'}}>
+                <div style={{fontFamily:'Caveat',fontSize:20,fontWeight:700,color:'#b5933a'}}>{n}</div>
+                <div style={{fontSize:8,color:'#999',fontFamily:'Space Mono'}}>{['Clients','Yrs Exp','Accuracy','Industries'][i]}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* About full-width image + text overlay */}
+        <div style={{position:'relative',borderBottom:'1.5px dashed #ccc'}}>
+          <div className="hatch" style={{height:100,border:'none'}}>[ full-width office / partners photo ]</div>
+          <div style={{position:'absolute',bottom:10,left:16,background:'rgba(255,255,255,0.92)',padding:'8px 12px',border:'1.5px solid #222',maxWidth:'45%'}}>
+            <div style={{fontFamily:'Caveat',fontSize:14,fontWeight:700,marginBottom:4}}>Advisory-first. Partner-led.</div>
+            <div style={{height:8,background:'#ddd',marginBottom:3}}></div>
+            <div style={{height:8,background:'#ddd',width:'80%'}}></div>
+          </div>
+        </div>
+
+        {/* Services horizontal scroll hint */}
+        <div style={{padding:'14px 16px',borderBottom:'1.5px dashed #ccc'}}>
+          <div className="section-label">Services</div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(6,1fr)',gap:6}}>
+            {['Audit','Tax','Advisory','Accounting','Startup','VCFO'].map(s=>(
+              <div key={s} style={{border:'1.5px solid #ddd',padding:'8px 4px',textAlign:'center',background:'#fff'}}>
+                <div style={{width:16,height:16,border:'1px solid #b5933a',margin:'0 auto 4px',borderRadius:'50%'}}></div>
+                <div style={{fontFamily:'Caveat',fontSize:11,fontWeight:700,lineHeight:1.2}}>{s}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why + Testimonials */}
+        <div style={{display:'grid',gridTemplateColumns:'2fr 3fr',borderBottom:'1.5px dashed #ccc'}}>
+          <div style={{padding:'12px 14px',borderRight:'1.5px dashed #ccc',background:'#f5f3ed'}}>
+            <div className="section-label">Why K&A</div>
+            {['Integrity','Partner-led','Expertise','Tech-driven','Compliance'].map(i=>(
+              <div key={i} style={{display:'flex',gap:6,alignItems:'center',marginBottom:5,fontSize:10}}>
+                <span style={{color:'#b5933a'}}>◆</span>{i}
+              </div>
+            ))}
+          </div>
+          <div style={{padding:'12px 14px'}}>
+            <div className="section-label">Client Voices</div>
+            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8}}>
+              {[1,2].map(i=>(
+                <div key={i} style={{border:'1.5px solid #e0ddd5',padding:'8px',background:'#fff',borderRadius:2}}>
+                  <div style={{fontFamily:'Caveat',fontSize:18,color:'#b5933a',marginBottom:4}}>❝</div>
+                  <div style={{height:8,background:'#eee',marginBottom:3}}></div>
+                  <div style={{height:8,background:'#eee',width:'80%',marginBottom:6}}></div>
+                  <div style={{fontSize:9,color:'#aaa',fontFamily:'Space Mono'}}>— Client {i}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div style={{padding:'16px',background:'#b5933a',color:'#fff',textAlign:'center'}}>
+          <div style={{fontFamily:'Caveat',fontSize:20,fontWeight:700}}>Let's simplify your financial complexity.</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   WIREFRAME C — "Magazine / Big-4 Clean"
+   Full-width sections, cinematic hero, alternating layouts
+   ============================================================ */
+function WireframeC() {
+  return (
+    <div className="wf" style={{width:'100%',fontSize:12}}>
+      {/* NAV — minimal top bar */}
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'10px 20px',background:'#fff',borderBottom:'1px solid #e0ddd5'}}>
+        <div style={{display:'flex',alignItems:'baseline',gap:6}}>
+          <div style={{fontFamily:'Caveat',fontSize:16,fontWeight:700}}>Kothaluru & Associates</div>
+          <div style={{fontSize:8,color:'#aaa',fontFamily:'Space Mono'}}>CHARTERED ACCOUNTANTS</div>
+        </div>
+        <div style={{display:'flex',gap:16,fontSize:10,color:'#666',fontFamily:'Space Mono'}}>
+          <span>Services</span><span>About</span><span>Insights</span>
+        </div>
+        <button className="wf-btn" style={{fontSize:10}}>Contact Us</button>
+      </div>
+
+      {/* HERO — cinematic with text left, image right */}
+      <div style={{display:'grid',gridTemplateColumns:'55% 45%',background:'#111',color:'#fff',minHeight:140}}>
+        <div style={{padding:'24px 20px',display:'flex',flexDirection:'column',justifyContent:'center'}}>
+          <div style={{fontSize:9,color:'#b5933a',fontFamily:'Space Mono',letterSpacing:2,marginBottom:8}}>CHARTERED ACCOUNTANTS · INDIA</div>
+          <div style={{fontFamily:'Caveat',fontSize:30,fontWeight:700,lineHeight:1.1,marginBottom:10}}>
+            Precision in Numbers.<br/>Excellence in Advisory.
+          </div>
+          <div style={{fontSize:10,color:'#aaa',lineHeight:1.6,marginBottom:14,maxWidth:'80%',fontFamily:'Space Mono'}}>
+            Clarity. Compliance. Strategic financial solutions.
+          </div>
+          <div style={{display:'flex',gap:8}}>
+            <button className="wf-btn gold" style={{fontSize:10}}>Schedule Consultation</button>
+            <button className="wf-btn" style={{fontSize:10,color:'#fff',borderColor:'#666'}}>Explore Services</button>
+          </div>
+        </div>
+        <div className="hatch" style={{borderLeft:'1px solid #333',opacity:0.6,color:'#888'}}>[ hero visual / abstract ]</div>
+      </div>
+
+      {/* TRUST METRICS — full-width strip */}
+      <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',background:'#f5f3ed',borderTop:'2px solid #b5933a'}}>
+        {[['200+','Clients Served'],['15+','Years Experience'],['99%','Compliance Accuracy'],['12+','Industries']].map(([n,l])=>(
+          <div key={l} style={{padding:'12px',textAlign:'center',borderRight:'1px solid #e0ddd5'}}>
+            <div style={{fontFamily:'Caveat',fontSize:24,fontWeight:700,color:'#b5933a'}}>{n}</div>
+            <div style={{fontSize:9,color:'#888',fontFamily:'Space Mono'}}>{l}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* SERVICES — 3+3 grid */}
+      <div style={{padding:'16px 20px',borderBottom:'1.5px dashed #ccc'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline',marginBottom:10}}>
+          <div>
+            <div className="section-label">Services</div>
+            <div style={{fontFamily:'Caveat',fontSize:18,fontWeight:700}}>Comprehensive Financial Expertise</div>
+          </div>
+          <span style={{fontSize:10,color:'#b5933a',fontFamily:'Space Mono',cursor:'pointer'}}>View all →</span>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:1,background:'#e0ddd5'}}>
+          {[
+            ['Audit & Assurance','Independent, transparent audits'],
+            ['Taxation & Compliance','GST, IT, TDS — full cycle'],
+            ['Business Advisory','Strategic growth consulting'],
+            ['Accounting & Outsourcing','End-to-end bookkeeping'],
+            ['Startup & Company Setup','Registration to operations'],
+            ['Virtual CFO Services','C-suite finance on demand'],
+          ].map(([title,desc],i)=>(
+            <div key={title} style={{background:'#fff',padding:'12px',cursor:'pointer'}}>
+              <div style={{width:18,height:18,border:'1.5px solid #b5933a',marginBottom:6,display:'flex',alignItems:'center',justifyContent:'center',fontSize:9,color:'#b5933a',fontFamily:'Space Mono'}}>{String.fromCharCode(65+i)}</div>
+              <div style={{fontFamily:'Caveat',fontSize:14,fontWeight:700,marginBottom:3}}>{title}</div>
+              <div style={{fontSize:9,color:'#999',fontFamily:'Space Mono'}}>{desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ABOUT — text left, visual right */}
+      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',borderBottom:'1.5px dashed #ccc'}}>
+        <div style={{padding:'16px 20px'}}>
+          <div className="section-label">About</div>
+          <div style={{fontFamily:'Caveat',fontSize:18,fontWeight:700,marginBottom:8}}>Partner-led. Precision-driven.</div>
+          <div style={{height:10,background:'#eee',marginBottom:4}}></div>
+          <div style={{height:10,background:'#eee',marginBottom:4,width:'90%'}}></div>
+          <div style={{height:10,background:'#eee',marginBottom:12,width:'80%'}}></div>
+          <div style={{display:'flex',flexDirection:'column',gap:4}}>
+            {['Integrity-first','Partner-led service','Technology-driven','Complete compliance'].map(i=>(
+              <div key={i} style={{display:'flex',gap:6,alignItems:'center',fontSize:10}}>
+                <span style={{color:'#b5933a',fontSize:8}}>▸</span>{i}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="hatch" style={{minHeight:100}}>[ team / office photo ]</div>
+      </div>
+
+      {/* TESTIMONIALS */}
+      <div style={{padding:'14px 20px',borderBottom:'1.5px dashed #ccc',background:'#f9f8f5'}}>
+        <div className="section-label">Testimonials</div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:8,marginTop:6}}>
+          {[1,2,3].map(i=>(
+            <div key={i} style={{background:'#fff',border:'1px solid #e0ddd5',padding:'10px'}}>
+              <div style={{fontFamily:'Caveat',fontSize:22,color:'#b5933a',marginBottom:4}}>"</div>
+              <div style={{height:9,background:'#f0ede6',marginBottom:3}}></div>
+              <div style={{height:9,background:'#f0ede6',width:'85%',marginBottom:3}}></div>
+              <div style={{height:9,background:'#f0ede6',width:'70%',marginBottom:8}}></div>
+              <div style={{display:'flex',alignItems:'center',gap:6}}>
+                <div style={{width:20,height:20,borderRadius:'50%',background:'#e0ddd5'}}></div>
+                <div>
+                  <div style={{height:7,background:'#ddd',width:60,marginBottom:2}}></div>
+                  <div style={{height:7,background:'#eee',width:45}}></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* FINAL CTA */}
+      <div style={{padding:'20px',background:'#111',color:'#fff',textAlign:'center'}}>
+        <div style={{fontFamily:'Caveat',fontSize:22,fontWeight:700,marginBottom:4}}>Let's simplify your financial complexity.</div>
+        <div style={{fontSize:9,color:'#777',fontFamily:'Space Mono',marginBottom:12}}>Schedule a free 30-minute consultation</div>
+        <button className="wf-btn gold">Get Started →</button>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   APP
+   ============================================================ */
+function App() {
+  return (
+    <DesignCanvas title="Kothaluru & Associates — Wireframe Explorations">
+      <DCSection id="layouts" title="Layout Options">
+        <DCArtboard id="wf-a" label="Option A — Editorial Vertical" width={560} height={860}>
+          <WireframeA />
+        </DCArtboard>
+        <DCArtboard id="wf-b" label="Option B — Asymmetric Split" width={560} height={740}>
+          <WireframeB />
+        </DCArtboard>
+        <DCArtboard id="wf-c" label="Option C — Big-4 Magazine" width={560} height={820}>
+          <WireframeC />
+        </DCArtboard>
+      </DCSection>
+
+      <DCSection id="notes" title="Design Notes">
+        <DCArtboard id="notes-card" label="Layout Decision Guide" width={560} height={260}>
+          <div style={{background:'#fafaf8',width:'100%',height:'100%',padding:'20px',fontFamily:'Caveat',fontSize:14,lineHeight:1.7,border:'2px solid #222'}}>
+            <div style={{fontFamily:'Space Mono',fontSize:10,color:'#aaa',marginBottom:10,letterSpacing:1}}>CHOOSE BASED ON GOAL</div>
+            <div><span style={{color:'#b5933a',fontWeight:700}}>Option A — Editorial Vertical</span><br/>
+            <span style={{fontFamily:'Space Mono',fontSize:10,color:'#666'}}>Best for: Typography-forward, journalistic feel. Strong trust signals up front (metrics in hero). More text-heavy — suits copy-driven messaging.</span></div>
+            <div style={{borderTop:'1px dashed #ddd',margin:'10px 0'}}></div>
+            <div><span style={{color:'#b5933a',fontWeight:700}}>Option B — Asymmetric Split</span><br/>
+            <span style={{fontFamily:'Space Mono',fontSize:10,color:'#666'}}>Best for: Modern/bold positioning. Sidebar nav creates unique agency feel. Stands out among CA firms — higher risk, higher reward.</span></div>
+            <div style={{borderTop:'1px dashed #ddd',margin:'10px 0'}}></div>
+            <div><span style={{color:'#b5933a',fontWeight:700}}>Option C — Big-4 Magazine</span><br/>
+            <span style={{fontFamily:'Space Mono',fontSize:10,color:'#666'}}>Best for: Enterprise credibility. Most conservative, closest to McKinsey/Big-4 feel. Clean grid, dark hero, gold accents — safest premium bet.</span></div>
+          </div>
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+<div id="root"></div>
+</body>
+</html>
