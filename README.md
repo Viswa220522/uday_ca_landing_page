@@ -1,35 +1,33 @@
-# Kothaluru & Associates - Landing Page Prototype
+# Raghavendra Kothuluru and Associates - Landing Page
 
-A high-end, cinematic landing page prototype for "Kothaluru & Associates," a Chartered Accountant firm. This project features a sophisticated Navy Blue design system with real-time customization capabilities.
+A high-end, professionally-designed landing page for "Raghavendra Kothuluru and Associates," a Chartered Accountant firm. Sophisticated Navy Blue design system optimized for instant load and zero dependencies.
 
 ## 🚀 How to Run
-Since this is a self-contained prototype with no build steps:
+Self-contained, no build steps:
 1. Clone the repository.
 2. Open `index.html` directly in any modern web browser.
-3. Use the **Tweaks Panel** (bottom right) to experiment with layout density and visual script presence in real-time.
+3. Fully functional — all interactions, animations, scroll reveals work instantly.
 
 ## 🛠 Tech Stack
-- **Core**: HTML5, Vanilla CSS3, Vanilla JavaScript.
-- **Components**: React 18 (loaded via CDN for the experimental tweaks panel).
-- **Transpilation**: Babel Standalone (for JSX support in the tweaks panel).
-- **Design Tokens**: Extensive use of CSS Custom Properties (variables) for theming and spacing.
-- **Animations**: CSS Keyframes and `IntersectionObserver` for scroll-driven reveals.
+- **Core**: HTML5, Vanilla CSS3, Vanilla JavaScript (no frameworks, no transpilation).
+- **Design System**: CSS Custom Properties (variables) for colors and responsive spacing.
+- **Interactions**: CSS Keyframes animations, `IntersectionObserver` for scroll-driven reveals, event listeners for hero effects.
+- **Performance**: Zero network requests, zero dependencies, instant page render.
 
 ## 🏗 Architecture
-The project follows a **prototype-first architecture**, prioritizing visual fidelity and professional identity:
 
-- **Professional Identity**: A standardized Navy Blue and Ice Blue palette designed for trust and prestige. Legacy themes have been consolidated into this singular high-end aesthetic.
-- **Live Customization**: The `tweaks-panel.jsx` component allows real-time adjustment of:
-  - **Density**: Switches between 'spacious' and 'compact' layouts.
-  - **Script Presence**: Controls the visibility of secondary technical elements and cinematic serif accents.
-- **Visual Interactions**: 
-  - Magnetic button pull on CTAs.
-  - Cursor-tracking radial glows.
-  - Letter-split hover effects in the hero section.
-  - Background opacity transitions on scroll.
+**Single Navy Blue Identity**: Professional, trustworthy aesthetic. All colors/spacing via CSS custom properties (`:root`).
+
+**Visual Features**:
+- Magnetic button pull on CTAs
+- Cursor-tracking radial glow in hero section
+- Letter-split hover effects on headlines
+- Word cycling animation in hero subtitle
+- Scroll-triggered staggered reveals across all sections
+- Nav background opacity transition on scroll
 
 ## 📂 Project Structure
-- `index.html`: The main entry point containing the landing page structure and core logic.
-- `tweaks-panel.jsx`: React component for the live customization interface.
-- `assets/`: Logos and reference imagery.
-- `CLAUDE.md`: Implementation guide and technical specifications.
+- `index.html` — Complete landing page (HTML + CSS + JS in one file)
+- `assets/` — CA India logo
+- `CLAUDE.md` — Developer guide and technical notes
+- `README.md` — This file
