@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html data-src-ver="bcfcce12" lang="en"
-  style="--script-opacity: 0.65; --section-pad: 64px; --metric-pad: 24px; --card-pad: 24px; --why-pad: 22px;">
+﻿<!DOCTYPE html>
+<html lang="en"
+  style="--script-opacity: 0.65; --section-pad: 120px; --metric-pad: 48px; --card-pad: 44px; --why-pad: 40px;">
 
 <head>
 
@@ -12,15 +12,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&amp;display=swap"
     rel="stylesheet">
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
-    integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
-    integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
-    integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
-    crossorigin="anonymous"></script>
   <style>
     *,
     *::before,
@@ -49,47 +40,6 @@
       --metric-pad: 48px;
       --card-pad: 44px;
       --why-pad: 40px;
-    }
-
-    /* script presence */
-    .hero-headline-script,
-    .final-cta-script,
-    .section-title em,
-    .metric-num {
-      opacity: var(--script-opacity-el, 1);
-    }
-
-    .hero-headline-script {
-      opacity: var(--script-opacity);
-    }
-
-    .final-cta-script {
-      opacity: var(--script-opacity);
-    }
-
-    /* density */
-    section {
-      padding: var(--section-pad) 64px;
-    }
-
-    .about {
-      padding: var(--section-pad) 64px;
-    }
-
-    .final-cta {
-      padding: var(--section-pad) 64px;
-    }
-
-    .metric-item {
-      padding: var(--metric-pad) 32px;
-    }
-
-    .service-card {
-      padding: var(--card-pad) 36px;
-    }
-
-    .why-item {
-      padding: var(--why-pad) 28px;
     }
 
     html {
@@ -285,6 +235,7 @@
       display: block;
       margin-bottom: 28px;
       white-space: nowrap;
+      opacity: var(--script-opacity);
     }
 
     .hero-sub {
@@ -401,7 +352,7 @@
     }
 
     .metric-item {
-      padding: 48px 32px;
+      padding: var(--metric-pad) 32px;
       text-align: center;
       border-right: 1px solid var(--border);
       transition: background 0.2s;
@@ -435,7 +386,7 @@
 
     /* ── SECTION COMMON ── */
     section {
-      padding: 120px 64px;
+      padding: var(--section-pad) 64px;
     }
 
     .section-eyebrow {
@@ -495,7 +446,7 @@
 
     .service-card {
       background: var(--warm-white);
-      padding: 44px 36px;
+      padding: var(--card-pad) 36px;
       cursor: pointer;
       position: relative;
       overflow: hidden;
@@ -571,7 +522,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
-      padding: 120px 64px;
+      padding: var(--section-pad) 64px;
     }
 
     .about .section-eyebrow {
@@ -692,7 +643,7 @@
 
     .why-item {
       background: var(--warm-grey);
-      padding: 40px 28px;
+      padding: var(--why-pad) 28px;
       transition: background 0.2s;
     }
 
@@ -793,7 +744,7 @@
     /* ── FINAL CTA ── */
     .final-cta {
       background: #0d1f3c;
-      padding: 120px 64px;
+      padding: var(--section-pad) 64px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -834,6 +785,7 @@
       display: block;
       margin-bottom: 40px;
       letter-spacing: 0.01em;
+      opacity: var(--script-opacity);
     }
 
     .final-cta-sub {
@@ -1148,10 +1100,10 @@
     }
   </style>
 
-<body style="cursor: crosshair; font-family: &quot;Plus Jakarta Sans&quot;;" data-cc-id="cc-1">
+<body>
 
   <!-- NAV -->
-  <nav style="background: rgba(248, 250, 253, 0.94);">
+  <nav>
     <div class="nav-logo">
       <img src="assets/CA India Logo.png" alt="CA India" class="nav-logo-ca">
       <div class="nav-logo-divider"></div>
@@ -1175,7 +1127,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow" id="heroEyebrow">Kothaluru &amp; Associates · Chartered Accountants · India</div>
       <h1 class="hero-headline" id="heroHeadline">Precision in Numbers.</h1>
-      <div class="hero-headline-script" style="display: block; font-size: 38px;">Excellence in Advisory.</div>
+      <div class="hero-headline-script">Excellence in Advisory.</div>
       <p class="hero-sub">
         At Kothaluru &amp; Associates, we deliver clarity, compliance, and strategic financial solutions tailored for
         modern businesses.
@@ -1196,23 +1148,19 @@
   <div class="metrics">
     <div class="metrics-inner">
       <div class="metric-item reveal visible">
-        <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">200<span
-            style="font-size:0.5em;vertical-align:super">+</span></div>
+        <div class="metric-num">200<span style="font-size:0.5em;vertical-align:super">+</span></div>
         <div class="metric-label">Clients Served</div>
       </div>
       <div class="metric-item reveal reveal-delay-1 visible">
-        <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">15<span
-            style="font-size:0.5em;vertical-align:super">+</span></div>
+        <div class="metric-num">15<span style="font-size:0.5em;vertical-align:super">+</span></div>
         <div class="metric-label">Years of Experience</div>
       </div>
       <div class="metric-item reveal reveal-delay-2 visible">
-        <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">99<span
-            style="font-size:0.5em;vertical-align:super">%</span></div>
+        <div class="metric-num">99<span style="font-size:0.5em;vertical-align:super">%</span></div>
         <div class="metric-label">Compliance Accuracy</div>
       </div>
       <div class="metric-item reveal reveal-delay-3 visible">
-        <div class="metric-num" style="font-family: var(--script); font-weight: 400; font-size: 56px;">12<span
-            style="font-size:0.5em;vertical-align:super">+</span></div>
+        <div class="metric-num">12<span style="font-size:0.5em;vertical-align:super">+</span></div>
         <div class="metric-label">Industries Covered</div>
       </div>
     </div>
@@ -1431,7 +1379,7 @@
     <div class="final-cta-eyebrow reveal visible">Begin the Conversation</div>
     <h2 class="final-cta-title reveal reveal-delay-1 visible">
       Let's simplify your
-      <span class="final-cta-script" style="display: block; font-size: 44px;">financial complexity.</span>
+      <span class="final-cta-script">financial complexity.</span>
     </h2>
     <p class="final-cta-sub reveal reveal-delay-2 visible">Schedule a complimentary 30-minute consultation with one of
       our partners — no obligations, just clarity.</p>
@@ -1476,103 +1424,7 @@
       }
     });
   </script>
-  <script type="text/babel" src="tweaks-panel.jsx"></script>
-  <script type="text/babel">
-    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-      "scriptPresence": 3,
-      "density": "spacious"
-    }/*EDITMODE-END*/;
 
-    function applyTweaks(tweaks) {
-      const root = document.documentElement;
-
-      // Script presence (0=none, 1=subtle, 2=balanced, 3=expressive)
-      const opacities = [0, 0.2, 0.38, 0.65];
-      const sizes = { hero: [0, '18px', '28px', '38px'], cta: [0, '22px', '32px', '44px'] };
-      const sp = tweaks.scriptPresence;
-      root.style.setProperty('--script-opacity', opacities[sp]);
-
-      const hScript = document.querySelector('.hero-headline-script');
-      const cScript = document.querySelector('.final-cta-script');
-      const metricNums = document.querySelectorAll('.metric-num');
-
-      if (hScript) {
-        hScript.style.display = sp === 0 ? 'none' : 'block';
-        hScript.style.fontSize = sizes.hero[sp] || '28px';
-      }
-      if (cScript) {
-        cScript.style.display = sp === 0 ? 'none' : 'block';
-        cScript.style.fontSize = sizes.cta[sp] || '32px';
-      }
-      // Metric numbers: at low script presence use sans-serif
-      metricNums.forEach(el => {
-        el.style.fontFamily = sp <= 1
-          ? 'var(--sans)'
-          : 'var(--script)';
-        el.style.fontWeight = sp <= 1 ? '800' : '400';
-        el.style.fontSize = sp <= 1 ? '40px' : '56px';
-      });
-
-      // Density
-      const pads = {
-        spacious: { section: '120px', metric: '48px', card: '44px', why: '40px' },
-        compact: { section: '64px', metric: '24px', card: '24px', why: '22px' },
-      };
-      const d = pads[tweaks.density] || pads.spacious;
-      root.style.setProperty('--section-pad', d.section);
-      root.style.setProperty('--metric-pad', d.metric);
-      root.style.setProperty('--card-pad', d.card);
-      root.style.setProperty('--why-pad', d.why);
-    }
-
-    function KATweaks() {
-      const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
-
-      React.useEffect(() => { if (tweaks) applyTweaks(tweaks); }, [tweaks]);
-
-      if (!tweaks) return null;
-
-      return (
-        <TweaksPanel>
-          <TweakSection label="Script Presence">
-            <TweakSlider
-              id="scriptPresence"
-              min={0} max={3} step={1}
-              value={tweaks.scriptPresence}
-              onChange={v => setTweak('scriptPresence', v)}
-              formatValue={v => ['None', 'Subtle', 'Balanced', 'Expressive'][v]}
-            />
-          </TweakSection>
-
-          <TweakSection label="Density">
-            <TweakRadio
-              id="density"
-              value={tweaks.density}
-              options={[
-                { value: 'spacious', label: 'Spacious' },
-                { value: 'compact', label: 'Compact' },
-              ]}
-              onChange={v => setTweak('density', v)}
-            />
-          </TweakSection>
-        </TweaksPanel>
-      );
-    }
-
-    window.KATweaks = KATweaks;
-
-    setTimeout(() => {
-      let mountEl = document.getElementById('tweaks-root');
-      if (!mountEl) {
-        mountEl = document.createElement('div');
-        mountEl.id = 'tweaks-root';
-        document.body.appendChild(mountEl);
-      }
-      const tweaksRoot = ReactDOM.createRoot(mountEl);
-      const App = window.KATweaks;
-      tweaksRoot.render(<App />);
-    }, 0);
-  </script>
 
   <script>
     // ── HERO ALIVE EFFECTS ──
