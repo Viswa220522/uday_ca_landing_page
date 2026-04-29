@@ -177,7 +177,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px 64px 80px;
+      padding: 120px 64px 50px;
       position: relative;
       overflow: hidden;
     }
@@ -262,7 +262,7 @@
       width: 48px;
       height: 1px;
       background: linear-gradient(to right, transparent, var(--gold), transparent);
-      margin: 32px auto 0;
+      margin: 32px auto 0 auto;
       opacity: 0.6;
       display: block;
     }
@@ -309,39 +309,15 @@
       border-color: var(--ink-light);
     }
 
-    .hero-scroll {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: fadeUp 0.8s 1.2s forwards;
-    }
-
-    .hero-scroll span {
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      color: var(--ink-light);
-      text-transform: uppercase;
-      opacity: 0.5;
-    }
-
-    .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: scrollPulse 2s infinite;
-    }
 
     /* ── METRICS STRIP ── */
     .metrics {
       background: var(--warm-grey);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      margin-top: -50px;
+      position: relative;
+      z-index: 1;
     }
 
     .metrics-inner {
@@ -962,18 +938,6 @@
       }
     }
 
-    @keyframes scrollPulse {
-
-      0%,
-      100% {
-        opacity: 0.3;
-      }
-
-      50% {
-        opacity: 0.8;
-      }
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(32px);
@@ -1136,11 +1100,7 @@
         <a href="#contact" class="btn-primary">Schedule Consultation</a>
         <a href="#services" class="btn-ghost">Explore Services →</a>
       </div>
-      <div class="hero-divider" style="background-position: center center"></div>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+      <div class="hero-divider"></div>
     </div>
   </section>
 
