@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } else {
         if (!document.getElementById('mobileCtaLink')) {
-          mobileContainer.innerHTML = '<a href="#contact" id="mobileCtaLink">Book Consultation ?</a>';
+          mobileContainer.innerHTML = '<a href="#contact" id="mobileCtaLink">Book Consultation &#8599;</a>';
           rightGroup.innerHTML = '';
           console.log('[Navbar] CTA Active: Plain Nav Link (Inside Menu)');
         }
