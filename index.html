@@ -1,26 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"
-  style="--script-opacity: 0.65; --section-pad: 120px; --metric-pad: 48px; --card-pad: 44px; --why-pad: 40px;">
-
+<html lang="en">
 <head>
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raghavendra Kothuluru and Associates — Chartered Accountants</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&amp;display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     :root {
       --gold: #2563a8;
       --gold-light: #3a7bc8;
@@ -28,18 +14,24 @@
       --ink: #0d1f3c;
       --ink-mid: #2a3f62;
       --ink-light: #6280a8;
-      --warm-white: #f8fafd;
+      --warm-white: #f8fafd; /* From user's first reference, a very light blue/grey */
       --warm-grey: #eaf0f8;
       --border: #cddaee;
-      --hero-bg: #f0f5fb;
+      --hero-bg: #f4f7fb; /* Clean, minimal background */
+      
       --sans: 'Plus Jakarta Sans', sans-serif;
       --script: 'Cormorant Garamond', serif;
-      /* tweakable */
-      --script-opacity: 0.38;
-      --section-pad: 120px;
-      --metric-pad: 48px;
-      --card-pad: 44px;
-      --why-pad: 40px;
+      
+      /* Spacing Scale */
+      --space-sm: clamp(16px, 2vw, 24px);
+      --space-md: clamp(32px, 4vw, 48px);
+      --space-lg: clamp(64px, 8vw, 120px);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -48,12 +40,54 @@
 
     body {
       font-family: var(--sans);
-      background: var(--warm-white);
+      background: var(--hero-bg);
       color: var(--ink);
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    /* ── NAV ── */
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3 {
+      font-family: var(--sans);
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--ink-mid);
+    }
+
+    .editorial-script {
+      font-family: var(--script);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+
+    /* ── BUTTONS ── */
+    .btn-pill {
+      background: var(--ink);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 40px; /* Pill shape */
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border: 1px solid var(--ink);
+    }
+
+    .btn-pill:hover {
+      background: transparent;
+      color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    /* ── NAVIGATION ── */
     nav {
       position: fixed;
       top: 0;
@@ -63,1448 +97,576 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 64px;
-      height: 72px;
-      background: rgba(248, 250, 253, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(37, 99, 168, 0.12);
-      transition: background 0.3s;
+      padding: 0 4vw;
+      height: 80px;
+      background: rgba(244, 247, 251, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(13, 31, 60, 0.05);
     }
 
     .nav-logo {
       display: flex;
-      flex-direction: row;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
     }
 
     .nav-logo-ca {
-      height: 38px;
+      height: 40px;
       width: auto;
-      opacity: 0.95;
     }
 
-    @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 0.7;
-      }
-
-      50% {
-        opacity: 0.15;
-      }
-    }
-
-    .nav-logo-divider {
-      width: 1px;
-      height: 36px;
-      background: var(--gold);
-      display: inline-block;
-      margin: 0 6px;
-      animation: blink 1.6s ease-in-out infinite;
-      flex-shrink: 0;
-    }
-
+    /* Animated Branding */
     .nav-logo-text {
       display: flex;
       flex-direction: column;
-      gap: 1px;
-    }
-
-    .nav-logo-main {
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 17px;
-      color: var(--ink);
-      letter-spacing: 0.01em;
-    }
-
-    .nav-logo-sub {
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 400;
-      color: var(--gold);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: rgba(15, 15, 15, 0.55);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--ink);
-    }
-
-    .nav-cta {
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      padding: 9px 22px;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      text-decoration: none;
-    }
-
-    .nav-cta:hover {
-      background: var(--gold);
-      color: #fff;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background: var(--hero-bg);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 64px 50px;
-      position: relative;
+      gap: 2px;
       overflow: hidden;
     }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url('assets/hero-bg.png');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.05;
-      mix-blend-mode: multiply;
-      pointer-events: none;
+    .nav-logo-main {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(37, 99, 168, 0.08) 0%, transparent 70%);
-      pointer-events: none;
+    .nav-logo-sub {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      width: 100%;
-      max-width: 760px;
+    /* Navigation Links & Dropdown */
+    .nav-links {
       display: flex;
-      flex-direction: column;
+      gap: 40px;
+      list-style: none;
       align-items: center;
     }
 
-    .hero-eyebrow {
-      font-family: var(--sans);
-      font-size: 11px;
+    .nav-links > li > a {
+      color: var(--ink-mid);
+      text-decoration: none;
+      font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links > li > a:hover {
+      color: var(--ink);
+    }
+
+    /* Dropdown specific */
+    .dropdown {
+      position: relative;
+      padding: 20px 0; /* Expanded hit area */
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: #fff;
+      min-width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(13, 31, 60, 0.08);
+      border: 1px solid var(--border);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 16px;
+      color: var(--ink-mid);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background: var(--warm-grey);
+      color: var(--ink);
+    }
+
+    /* ── CREATIVE MINIMAL HERO ── */
+    .hero {
+      padding: calc(80px + var(--space-lg)) 4vw var(--space-lg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      align-items: center;
+      min-height: 100vh;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       display: block;
     }
 
     .hero-headline {
-      font-family: var(--sans);
+      font-size: clamp(48px, 6vw, 84px);
       font-weight: 800;
-      font-size: 42px;
-      color: var(--ink);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      display: block;
-      margin-bottom: 12px;
-      white-space: nowrap;
-    }
-
-    .hero-headline-script {
-      font-family: var(--script);
-      font-weight: 300;
-      font-style: italic;
-      font-size: 28px;
-      color: rgba(37, 99, 168, 0.45);
-      letter-spacing: 0.02em;
-      line-height: 1.3;
-      display: block;
-      margin-bottom: 28px;
-      white-space: nowrap;
-      opacity: var(--script-opacity);
+      line-height: 1.05;
+      margin-bottom: 24px;
+      letter-spacing: -0.03em;
     }
 
     .hero-sub {
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 1.75;
-      color: var(--ink-light);
-      letter-spacing: 0.01em;
-      display: block;
-      margin-bottom: 36px;
+      font-size: clamp(16px, 1.5vw, 20px);
+      line-height: 1.6;
+      margin-bottom: 40px;
       max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-divider {
-      width: 48px;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold), transparent);
-      margin: 32px auto 0 auto;
-      opacity: 0.6;
-      display: block;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #fff;
-      border: none;
-      padding: 15px 32px;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      text-decoration: none;
-      display: inline-block;
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--ink-light);
-      border: 1px solid var(--border);
-      padding: 14px 28px;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-ghost:hover {
-      color: var(--ink);
-      border-color: var(--ink-light);
-    }
-
-
-    /* ── METRICS STRIP ── */
-    .metrics {
-      background: var(--warm-grey);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      margin-top: -50px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .metrics-inner {
+    /* Vertical Slices Grid */
+    .hero-visuals {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      max-width: 1200px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1vw;
+      height: 60vh;
+      min-height: 500px;
+      align-items: center;
+    }
+
+    .portrait-slice {
+      width: 100%;
+      height: 70%;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      filter: grayscale(20%);
+    }
+
+    /* Staggered Heights */
+    .portrait-slice:nth-child(1) { height: 60%; transform: translateY(-20px); }
+    .portrait-slice:nth-child(2) { height: 80%; transform: translateY(10px); }
+    .portrait-slice:nth-child(3) { height: 100%; transform: translateY(-30px); }
+    .portrait-slice:nth-child(4) { height: 85%; transform: translateY(20px); }
+    .portrait-slice:nth-child(5) { height: 65%; transform: translateY(-10px); }
+
+    .portrait-slice:hover {
+      height: 100% !important;
+      transform: translateY(0) scale(1.05) !important;
+      filter: grayscale(0%);
+      box-shadow: 0 20px 40px rgba(13, 31, 60, 0.15);
+      z-index: 10;
+      position: relative;
+    }
+
+    /* ── ABOUT / STORYTELLING ── */
+    .about-story {
+      padding: var(--space-lg) 4vw;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6vw;
+      align-items: center;
+      max-width: 1600px;
       margin: 0 auto;
     }
 
-    .metric-item {
-      padding: var(--metric-pad) 32px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-      transition: background 0.2s;
+    .about-visual-large {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 24px;
+      background-image: url('assets/about-team.png');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 30px 60px rgba(13, 31, 60, 0.08);
     }
 
-    .metric-item:last-child {
-      border-right: none;
+    .pill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
     }
 
-    .metric-item:hover {
-      background: var(--warm-white);
-    }
-
-    .metric-num {
-      font-family: var(--script);
-      font-size: 56px;
-      font-weight: 400;
-      color: var(--gold);
-      line-height: 1;
-      letter-spacing: -0.01em;
-    }
-
-    .metric-label {
-      margin-top: 8px;
-      font-size: 11px;
+    .pill-tag {
+      padding: 8px 16px;
+      border-radius: 40px;
+      border: 1px solid var(--border);
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-    }
-
-    /* ── SECTION COMMON ── */
-    section {
-      padding: var(--section-pad) 64px;
-    }
-
-    .section-eyebrow {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-family: var(--sans);
-      font-weight: 800;
-      font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-    }
-
-    .section-title em {
-      font-family: var(--script);
-      font-style: italic;
-      font-weight: 400;
-      font-size: 1.15em;
       color: var(--ink-mid);
     }
 
-    .section-body {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--ink-light);
-      font-weight: 400;
-    }
-
-    /* ── SERVICES ── */
+    /* ── SERVICES SECTION ── */
     .services {
-      background: var(--warm-white);
+      padding: var(--space-lg) 4vw;
+      background: var(--hero-bg);
     }
 
     .services-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      max-width: 1200px;
-      margin: 0 auto 56px;
+      text-align: center;
+      margin-bottom: var(--space-md);
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      max-width: 1200px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
     .service-card {
-      background: var(--warm-white);
-      padding: var(--card-pad) 36px;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.25s;
-      border: none;
-    }
-
-    .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: width 0.3s ease;
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid rgba(13, 31, 60, 0.05);
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: flex;
+      flex-direction: column;
     }
 
     .service-card:hover {
-      background: var(--warm-grey);
-    }
-
-    .service-card:hover::after {
-      width: 100%;
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(13, 31, 60, 0.06);
+      border-color: rgba(37, 99, 168, 0.2);
     }
 
     .service-icon {
-      width: 36px;
-      height: 36px;
-      margin-bottom: 24px;
+      width: 48px;
+      height: 48px;
+      background: var(--warm-grey);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .service-icon svg {
-      stroke: var(--gold);
-      fill: none;
-      stroke-width: 1.5;
+      margin-bottom: 24px;
+      color: var(--gold);
     }
 
     .service-card-title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 10px;
-      color: var(--ink);
-    }
-
-    .service-card-desc {
-      font-size: 13px;
-      line-height: 1.65;
-      color: var(--ink-light);
-      font-weight: 400;
-    }
-
-    .service-arrow {
-      margin-top: 24px;
-      font-size: 18px;
-      color: var(--gold);
-      transition: transform 0.2s;
-    }
-
-    .service-card:hover .service-arrow {
-      transform: translateX(4px);
-    }
-
-    /* ── ABOUT ── */
-    .about {
-      background: #1a3560;
-      color: #fff;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      padding: var(--section-pad) 64px;
-    }
-
-    .about .section-eyebrow {
-      color: #7aaee8;
-    }
-
-    .about .section-title {
-      color: #fff;
-    }
-
-    .about .section-title em {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .about-body {
-      font-size: 16px;
-      line-height: 1.85;
-      color: rgba(255, 255, 255, 0.5);
-      margin-top: 20px;
-    }
-
-    .about-pillars {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .pillar {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 14px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.7);
-      letter-spacing: 0.01em;
-    }
-
-    .pillar:first-child {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .pillar-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .about-visual {
-      position: relative;
-      aspect-ratio: 4/5;
-      background-image: url('assets/about-team.png');
-      background-size: cover;
-      background-position: center;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .about-visual::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 50%, rgba(13, 31, 60, 0.8) 100%);
-    }
-
-    .about-visual-label {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      color: rgba(255, 255, 255, 0.2);
-      text-transform: uppercase;
-      text-align: center;
-      line-height: 2;
-    }
-
-    .about-visual-badge {
-      position: absolute;
-      bottom: -16px;
-      right: -16px;
-      background: var(--gold);
-      color: #fff;
-      padding: 20px 24px;
-      text-align: center;
-    }
-
-    .about-visual-badge-num {
-      font-family: var(--script);
-      font-size: 36px;
-      line-height: 1;
-    }
-
-    .about-visual-badge-text {
-      font-size: 9px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    /* ── WHY ── */
-    .why {
-      background: var(--warm-grey);
-    }
-
-    .why-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .why-header {
-      margin-bottom: 64px;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .why-item {
-      background: var(--warm-grey);
-      padding: var(--why-pad) 28px;
-      transition: background 0.2s;
-    }
-
-    .why-item:hover {
-      background: var(--warm-white);
-    }
-
-    .why-num {
-      font-family: var(--script);
-      font-size: 40px;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    .why-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--ink);
-    }
-
-    .why-desc {
-      font-size: 13px;
-      line-height: 1.65;
-      color: var(--ink-light);
-    }
-
-    /* ── TESTIMONIALS ── */
-    .testimonials {
-      background: var(--warm-white);
-    }
-
-    .testimonials-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .testimonials-header {
-      margin-bottom: 56px;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .testimonial-card {
-      border: 1px solid var(--border);
-      padding: 40px 32px;
-      background: var(--warm-white);
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .testimonial-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-3px);
-    }
-
-    .testimonial-quote {
-      font-family: var(--script);
-      font-size: 48px;
-      line-height: 1;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .testimonial-text {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--ink-mid);
-      font-weight: 400;
-      font-family: var(--script);
-      font-style: italic;
-    }
-
-    .testimonial-divider {
-      width: 32px;
-      height: 1px;
-      background: var(--gold);
-      margin: 24px 0;
-    }
-
-    .testimonial-name {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .testimonial-role {
-      font-size: 11px;
-      color: var(--ink-light);
-      margin-top: 2px;
-      letter-spacing: 0.04em;
-      }
-
-    .testimonial-footer {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .testimonial-profile {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background-size: cover;
-      background-position: center;
-      border: 1px solid var(--border);
-    }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      background: #0d1f3c;
-      padding: var(--section-pad) 64px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(37, 99, 168, 0.15) 0%, transparent 70%);
-    }
-
-    .final-cta-eyebrow {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #7aaee8;
-      margin-bottom: 24px;
-    }
-
-    .final-cta-title {
-      font-family: var(--sans);
-      font-weight: 800;
-      font-size: clamp(36px, 5vw, 68px);
-      line-height: 1.05;
-      color: #fff;
-      letter-spacing: -0.02em;
       margin-bottom: 12px;
     }
 
-    .final-cta-script {
-      font-family: var(--script);
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(32px, 4.5vw, 60px);
-      color: rgba(122, 174, 232, 0.6);
-      display: block;
-      margin-bottom: 40px;
-      letter-spacing: 0.01em;
-      opacity: var(--script-opacity);
+    .service-card-desc {
+      font-size: 14px;
+      color: var(--ink-light);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
     }
 
-    .final-cta-sub {
-      font-size: 15px;
-      color: rgba(255, 255, 255, 0.5);
-      line-height: 1.7;
-      max-width: 440px;
-      margin: 0 auto 40px;
-    }
-
-    .final-cta-actions {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #09152a;
-      padding: 40px 64px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .footer-logo {
+    .service-arrow {
       font-weight: 700;
-      font-size: 15px;
-      color: #fff;
-    }
-
-    .footer-copy {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.3);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-links a {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.3);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    /* ── HERO ALIVE EFFECTS ── */
-    @keyframes heroFloat {
-
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    @keyframes wordIn {
-      from {
-        opacity: 0;
-        transform: translateY(12px) skewY(2deg);
-        filter: blur(4px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) skewY(0deg);
-        filter: blur(0);
-      }
-    }
-
-    @keyframes wordOut {
-      from {
-        opacity: 1;
-        transform: translateY(0) skewY(0deg);
-        filter: blur(0);
-      }
-
-      to {
-        opacity: 0;
-        transform: translateY(-12px) skewY(-2deg);
-        filter: blur(4px);
-      }
-    }
-
-    @keyframes cursorGlow {
-
-      0%,
-      100% {
-        opacity: 0.6;
-      }
-
-      50% {
-        opacity: 1;
-      }
-    }
-
-    .hero-cursor-glow {
-      position: absolute;
-      pointer-events: none;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(37, 99, 168, 0.12) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      transition: left 0.15s ease, top 0.15s ease;
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-word-cycle {
-      display: inline-block;
       color: var(--gold);
-      min-width: 180px;
-      text-align: left;
-      position: relative;
+      transition: transform 0.3s;
     }
 
-    .hero-word-cycle span {
-      display: inline-block;
-      animation: wordIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    .hero-word-cycle span.out {
-      position: absolute;
-      left: 0;
-      top: 0;
-      animation: wordOut 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    .hero-headline .letter {
-      display: inline-block;
-      transition: color 0.15s, transform 0.2s;
-      cursor: default;
-    }
-
-    .hero-headline .letter:hover {
-      color: var(--gold);
-      transform: translateY(-3px) scale(1.08);
-    }
-
-    .hero-eyebrow-char {
-      display: inline-block;
-      transition: color 0.1s, transform 0.15s;
-    }
-
-    .hero-eyebrow-char:hover {
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    .reveal-delay-1 {
-      transition-delay: 0.1s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: 0.2s;
-    }
-
-    .reveal-delay-3 {
-      transition-delay: 0.3s;
-    }
-
-    .reveal-delay-4 {
-      transition-delay: 0.4s;
-    }
-
-    .reveal-delay-5 {
-      transition-delay: 0.5s;
+    .service-card:hover .service-arrow {
+      transform: translateX(8px);
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      nav {
-        padding: 0 32px;
-      }
-
-      section {
-        padding: 80px 32px;
-      }
-
-      .about {
-        padding: 80px 32px;
-        gap: 48px;
-      }
-
-      .final-cta {
-        padding: 80px 32px;
-      }
-
-      footer {
-        padding: 32px;
-      }
-
-      .services-grid,
-      .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .why-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        padding: 0 20px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      section {
-        padding: 64px 20px;
-      }
-
-      .hero {
-        padding: 100px 20px 60px;
-      }
-
-      .metrics-inner {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .metric-item {
-        border-bottom: 1px solid var(--border);
-      }
-
-      .about {
+      .hero, .about-story {
         grid-template-columns: 1fr;
-        padding: 64px 20px;
-      }
-
-      .about-visual {
-        display: none;
-      }
-
-      .services-grid,
-      .testimonials-grid,
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services-header {
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 16px;
         text-align: center;
       }
-
-      .final-cta {
-        padding: 64px 20px;
-      }
-
-      .final-cta-actions {
+      
+      .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
         flex-direction: column;
         align-items: center;
       }
-    }
-  </style>
 
+      .hero-visuals {
+        height: 40vh;
+        min-height: 300px;
+        margin-top: 40px;
+      }
+
+      .pill-tags {
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: none; /* Add hamburger menu logic later if needed */
+      }
+    }
+
+    /* Initial Animation States */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
 <body>
 
-  <!-- NAV -->
+  <!-- GLOBAL NAV -->
   <nav>
-    <div class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="assets/CA India Logo.png" alt="CA India" class="nav-logo-ca">
-      <div class="nav-logo-divider"></div>
       <div class="nav-logo-text">
         <div class="nav-logo-main">Raghavendra Kothuluru and Associates</div>
         <div class="nav-logo-sub">Chartered Accountants</div>
       </div>
-    </div>
+    </a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#why">Why Us</a></li>
-      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li class="dropdown">
+        <a href="#services">Practice Areas ▾</a>
+        <div class="dropdown-menu">
+          <a href="services/audit-assurance.html">Audit & Assurance</a>
+          <a href="services/tax-regulatory.html">Tax & Regulatory</a>
+          <a href="services/business-advisory.html">Business Advisory</a>
+          <a href="services/accounting-business-support.html">Accounting & Support</a>
+          <a href="services/startup-consultancy.html">Startup Consultancy</a>
+          <a href="services/business-automation-it.html">Business Automation</a>
+        </div>
+      </li>
+      <li><a href="#testimonials">Testimonials</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Schedule Consultation</a>
+    <a href="#contact" class="btn-pill">Schedule Meet</a>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (Creative Minimal) -->
   <section class="hero" id="home">
-    <div class="hero-cursor-glow" id="heroGlow"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow" id="heroEyebrow">Raghavendra Kothuluru and Associates · Chartered Accountants · India</div>
-      <h1 class="hero-headline" id="heroHeadline">Precision in Numbers.</h1>
-      <div class="hero-headline-script">Excellence in Advisory.</div>
-      <p class="hero-sub">
-        At Raghavendra Kothuluru and Associates, we deliver clarity, compliance, and strategic financial solutions tailored for
-        modern businesses.
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Schedule Consultation</a>
-        <a href="#services" class="btn-ghost">Explore Services →</a>
-      </div>
-      <div class="hero-divider"></div>
+    <div class="hero-content reveal visible">
+      <span class="hero-eyebrow">Trusted Financial Solutions</span>
+      <h1 class="hero-headline">Clarity for<br><span class="editorial-script">Your Peace of Mind</span></h1>
+      <p class="hero-sub">At Raghavendra Kothuluru and Associates, we combine in-depth financial knowledge with a practical, client-focused approach to deliver results you can rely on.</p>
+      <a href="#contact" class="btn-pill">Schedule Meet</a>
+    </div>
+    
+    <div class="hero-visuals reveal delay-2 visible">
+      <div class="portrait-slice" style="background-image: url('assets/portrait_1.png');"></div>
+      <div class="portrait-slice" style="background-image: url('assets/portrait_2.png');"></div>
+      <div class="portrait-slice" style="background-image: url('assets/portrait_3.png');"></div>
+      <div class="portrait-slice" style="background-image: url('assets/portrait_4.png');"></div>
+      <div class="portrait-slice" style="background-image: url('assets/portrait_5.png');"></div>
     </div>
   </section>
 
-  <!-- METRICS STRIP -->
-  <div class="metrics">
-    <div class="metrics-inner">
-      <div class="metric-item reveal visible">
-        <div class="metric-num">200<span style="font-size:0.5em;vertical-align:super">+</span></div>
-        <div class="metric-label">Clients Served</div>
-      </div>
-      <div class="metric-item reveal reveal-delay-1 visible">
-        <div class="metric-num">15<span style="font-size:0.5em;vertical-align:super">+</span></div>
-        <div class="metric-label">Years of Experience</div>
-      </div>
-      <div class="metric-item reveal reveal-delay-2 visible">
-        <div class="metric-num">99<span style="font-size:0.5em;vertical-align:super">%</span></div>
-        <div class="metric-label">Compliance Accuracy</div>
-      </div>
-      <div class="metric-item reveal reveal-delay-3 visible">
-        <div class="metric-num">12<span style="font-size:0.5em;vertical-align:super">+</span></div>
-        <div class="metric-label">Industries Covered</div>
+  <!-- STORYTELLING ABOUT -->
+  <section class="about-story" id="about">
+    <div class="about-visual-large reveal"></div>
+    <div class="about-text reveal delay-1">
+      <span class="hero-eyebrow">About Our Firm</span>
+      <h2 style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px;">Advisory-first.<br><span class="editorial-script">Partner-led.</span></h2>
+      <p style="font-size: 16px; margin-bottom: 16px;">We are a full-service firm offering comprehensive financial support across a broad range of practice areas. Our senior professionals are directly involved in every engagement.</p>
+      <div class="pill-tags">
+        <div class="pill-tag">Personalized attention</div>
+        <div class="pill-tag">Proven track record of success</div>
+        <div class="pill-tag">Transparent and honest communication</div>
+        <div class="pill-tag">15+ Years Excellence</div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- SERVICES -->
+  <!-- SERVICES GRID -->
   <section class="services" id="services">
-    <div class="services-header">
-      <div>
-        <div class="section-eyebrow reveal visible">Our Services</div>
-        <h2 class="section-title reveal reveal-delay-1 visible">Comprehensive <em>Financial Expertise</em></h2>
-      </div>
-      <a href="#contact" class="btn-ghost reveal visible"
-        style="border-color:var(--border);color:var(--ink-light);font-size:13px;padding:11px 22px;">View All Services
-        →</a>
+    <div class="services-header reveal">
+      <span class="hero-eyebrow">Expertise In</span>
     </div>
     <div class="services-grid">
-
-      <a href="services/audit-assurance.html" class="service-card reveal visible" style="text-decoration:none;color:inherit;">
+      <!-- Card 1 -->
+      <a href="services/audit-assurance.html" class="service-card reveal">
         <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 28 28">
-            <rect x="4" y="4" width="20" height="20" rx="1"></rect>
-            <line x1="8" y1="10" x2="20" y2="10"></line>
-            <line x1="8" y1="14" x2="20" y2="14"></line>
-            <line x1="8" y1="18" x2="14" y2="18"></line>
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M9 3v18"></path></svg>
         </div>
-        <div class="service-card-title">Audit &amp; Assurance</div>
-        <div class="service-card-desc">Independent, transparent audits that build trust and strengthen your business
-          credibility.</div>
+        <div class="service-card-title">Audit & Assurance</div>
+        <div class="service-card-desc">Independent, transparent audits that build trust and strengthen your business credibility.</div>
+        <div class="service-arrow">→</div>
+      </a>
+      
+      <!-- Card 2 -->
+      <a href="services/tax-regulatory.html" class="service-card reveal delay-1">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"></path><path d="M14 3v5h5"></path><path d="M16 13H8"></path><path d="M16 17H8"></path><path d="M10 9H8"></path></svg>
+        </div>
+        <div class="service-card-title">Tax & Regulatory</div>
+        <div class="service-card-desc">End-to-end GST, Income Tax, TDS management — zero-gap compliance, every time.</div>
         <div class="service-arrow">→</div>
       </a>
 
-      <a href="services/tax-regulatory.html" class="service-card reveal reveal-delay-1 visible" style="text-decoration:none;color:inherit;">
+      <!-- Card 3 -->
+      <a href="services/business-advisory.html" class="service-card reveal delay-2">
         <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 28 28">
-            <path d="M6 22 L14 6 L22 22"></path>
-            <line x1="9" y1="16" x2="19" y2="16"></line>
-          </svg>
-        </div>
-        <div class="service-card-title">Tax &amp; Regulatory</div>
-        <div class="service-card-desc">End-to-end GST, Income Tax, TDS management — zero-gap compliance, every time.
-        </div>
-        <div class="service-arrow">→</div>
-      </a>
-
-      <a href="services/business-advisory.html" class="service-card reveal reveal-delay-2 visible" style="text-decoration:none;color:inherit;">
-        <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 28 28">
-            <circle cx="14" cy="14" r="9"></circle>
-            <line x1="14" y1="9" x2="14" y2="14"></line>
-            <line x1="14" y1="14" x2="18" y2="17"></line>
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
         </div>
         <div class="service-card-title">Business Advisory</div>
-        <div class="service-card-desc">Strategic consulting to drive growth, optimise capital, and navigate complex
-          decisions.</div>
+        <div class="service-card-desc">Strategic consulting to drive growth, optimise capital, and navigate complex decisions.</div>
         <div class="service-arrow">→</div>
       </a>
 
-      <a href="services/accounting-business-support.html" class="service-card reveal reveal-delay-1 visible" style="text-decoration:none;color:inherit;">
+      <!-- Card 4 -->
+      <a href="services/accounting-business-support.html" class="service-card reveal">
         <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 28 28">
-            <rect x="4" y="8" width="20" height="14" rx="1"></rect>
-            <path d="M9 8 V6 a5 5 0 0 1 10 0 V8"></path>
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
         </div>
-        <div class="service-card-title">Accounting &amp; Business Support</div>
-        <div class="service-card-desc">Full-cycle bookkeeping and MIS reporting — accurate, timely, and completely
-          managed.</div>
+        <div class="service-card-title">Accounting & Support</div>
+        <div class="service-card-desc">Full-cycle bookkeeping and MIS reporting — accurate, timely, and completely managed.</div>
         <div class="service-arrow">→</div>
       </a>
 
-      <a href="services/startup-consultancy.html" class="service-card reveal reveal-delay-2 visible" style="text-decoration:none;color:inherit;">
+      <!-- Card 5 -->
+      <a href="services/startup-consultancy.html" class="service-card reveal delay-1">
         <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 28 28">
-            <path d="M14 4 L24 9 L24 19 L14 24 L4 19 L4 9 Z"></path>
-            <line x1="14" y1="4" x2="14" y2="24"></line>
-            <line x1="4" y1="14" x2="24" y2="14"></line>
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.5 10.5L21 3v6"></path><path d="M10.5 13.5L3 21h6"></path><circle cx="12" cy="12" r="3"></circle></svg>
         </div>
         <div class="service-card-title">Startup Consultancy</div>
-        <div class="service-card-desc">From incorporation to operations — complete setup, structuring and regulatory
-          support.</div>
+        <div class="service-card-desc">From incorporation to operations — complete setup, structuring and regulatory support.</div>
         <div class="service-arrow">→</div>
       </a>
 
-      <a href="services/business-automation-it.html" class="service-card reveal reveal-delay-3 visible" style="text-decoration:none;color:inherit;">
+      <!-- Card 6 -->
+      <a href="services/business-automation-it.html" class="service-card reveal delay-2">
         <div class="service-icon">
-          <svg width="28" height="28" viewBox="0 0 28 28">
-            <rect x="4" y="12" width="6" height="10" rx="0.5"></rect>
-            <rect x="11" y="8" width="6" height="14" rx="0.5"></rect>
-            <rect x="18" y="4" width="6" height="18" rx="0.5"></rect>
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 9h6"></path><path d="M9 13h6"></path><path d="M9 17h4"></path></svg>
         </div>
-        <div class="service-card-title">Business Automation &amp; IT</div>
+        <div class="service-card-title">Business Automation</div>
         <div class="service-card-desc">Process automation, ERP implementation, and IT governance for modern operations.</div>
         <div class="service-arrow">→</div>
       </a>
-
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div>
-      <div class="section-eyebrow reveal visible">About the Firm</div>
-      <h2 class="section-title reveal reveal-delay-1 visible">Advisory-first.<br><em>Partner-led.</em></h2>
-      <p class="about-body reveal reveal-delay-2 visible">
-        Raghavendra Kothuluru and Associates is built on a singular belief: every business deserves access to the kind of
-        financial clarity that drives confident decisions. We are a partner-led practice — our senior professionals are
-        directly involved in every engagement, ensuring that the advice you receive is precise, relevant, and grounded
-        in real-world expertise.
-      </p>
-      <div class="about-pillars">
-        <div class="pillar reveal reveal-delay-2 visible">
-          <div class="pillar-dot"></div>Integrity-first approach to every engagement
-        </div>
-        <div class="pillar reveal reveal-delay-3 visible">
-          <div class="pillar-dot"></div>Partner-led, not delegated — senior attention always
-        </div>
-        <div class="pillar reveal reveal-delay-4 visible">
-          <div class="pillar-dot"></div>Technology-driven workflows for real-time visibility
-        </div>
-        <div class="pillar reveal reveal-delay-5 visible">
-          <div class="pillar-dot"></div>Cross-industry expertise across 12+ sectors
-        </div>
-      </div>
+  <!-- TESTIMONIALS (Minimal & Editorial) -->
+  <section class="about-story" id="testimonials" style="background: var(--hero-bg);">
+    <div class="about-text reveal">
+      <span class="hero-eyebrow">Client Voices</span>
+      <h2 style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px;">Trusted by<br><span class="editorial-script">Founders & Leaders</span></h2>
+      <p style="font-size: 16px;">Hear from the businesses that rely on our precision and strategic foresight.</p>
     </div>
-    <div class="about-visual reveal reveal-delay-2">
-      <div class="about-visual-label">Raghavendra Kothuluru and Associates<br>Core Partners & Team</div>
-      <div class="about-visual-badge">
-        <div class="about-visual-badge-num">15+</div>
-        <div class="about-visual-badge-text">Years of<br>Excellence</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="why" id="why">
-    <div class="why-inner">
-      <div class="why-header">
-        <div class="section-eyebrow reveal visible">Why K&amp;A</div>
-        <h2 class="section-title reveal reveal-delay-1 visible">What Sets Us <em>Apart</em></h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-item reveal visible">
-          <div class="why-num">01</div>
-          <div class="why-title">Integrity-First</div>
-          <div class="why-desc">Every recommendation is grounded in ethics. No shortcuts, no compromise.</div>
-        </div>
-        <div class="why-item reveal reveal-delay-1 visible">
-          <div class="why-num">02</div>
-          <div class="why-title">Partner-Led</div>
-          <div class="why-desc">Senior partners on every engagement — not just at onboarding.</div>
-        </div>
-        <div class="why-item reveal reveal-delay-2 visible">
-          <div class="why-num">03</div>
-          <div class="why-title">Industry Expertise</div>
-          <div class="why-desc">Deep domain knowledge across manufacturing, tech, real estate, and more.</div>
-        </div>
-        <div class="why-item reveal reveal-delay-3 visible">
-          <div class="why-num">04</div>
-          <div class="why-title">Tech-Driven</div>
-          <div class="why-desc">Modern tools for real-time reporting, cloud accounting, and workflow automation.</div>
-        </div>
-        <div class="why-item reveal reveal-delay-4 visible">
-          <div class="why-num">05</div>
-          <div class="why-title">Full Compliance</div>
-          <div class="why-desc">Comprehensive regulatory coverage — never miss a deadline or filing.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="testimonials">
-    <div class="testimonials-inner">
-      <div class="testimonials-header">
-        <div class="section-eyebrow reveal visible">Client Voices</div>
-        <h2 class="section-title reveal reveal-delay-1 visible">Trusted by <em>Founders &amp; Leaders</em></h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal visible">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-text">Raghavendra Kothuluru and Associates brought the kind of rigour and clarity we never
-            experienced with our previous advisors. Our compliance is airtight and our financials finally tell a story.
-          </p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <div class="testimonial-profile" style="background-image: url('assets/testimonial-1.png');"></div>
-            <div class="testimonial-info">
-              <div class="testimonial-name">Ravi Shankar M.</div>
-              <div class="testimonial-role">Founder, TechScale Ventures</div>
-            </div>
+    
+    <div class="testimonials-list reveal delay-1" style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="background: #fff; padding: 32px; border-radius: 16px; border: 1px solid rgba(13, 31, 60, 0.05);">
+        <p style="font-family: var(--script); font-style: italic; font-size: 18px; margin-bottom: 16px; color: var(--ink);">"Raghavendra Kothuluru and Associates brought the kind of rigour and clarity we never experienced with our previous advisors. Our compliance is airtight."</p>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background-image: url('assets/testimonial-1.png'); background-size: cover;"></div>
+          <div>
+            <div style="font-weight: 700; font-size: 13px;">Ravi Shankar M.</div>
+            <div style="font-size: 11px; color: var(--ink-light);">Founder, TechScale Ventures</div>
           </div>
         </div>
-        <div class="testimonial-card reveal reveal-delay-1 visible">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-text">The Virtual CFO service was a game-changer during our Series A preparation. The
-            partners were always available, deeply involved, and genuinely cared about our outcome.</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <div class="testimonial-profile" style="background-image: url('assets/testimonial-2.png');"></div>
-            <div class="testimonial-info">
-              <div class="testimonial-name">Priya Desai</div>
-              <div class="testimonial-role">CEO, Greenfield Retail Pvt. Ltd.</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-2 visible">
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-text">Exceptional tax planning saved us significantly this year. What impressed me most
-            was their proactive approach — they flagged opportunities before we even asked.</p>
-          <div class="testimonial-divider"></div>
-          <div class="testimonial-footer">
-            <div class="testimonial-profile" style="background-image: url('assets/testimonial-3.png');"></div>
-            <div class="testimonial-info">
-              <div class="testimonial-name">Anil Kothari</div>
-              <div class="testimonial-role">Director, Kothari Industries</div>
-            </div>
+      </div>
+      
+      <div style="background: #fff; padding: 32px; border-radius: 16px; border: 1px solid rgba(13, 31, 60, 0.05);">
+        <p style="font-family: var(--script); font-style: italic; font-size: 18px; margin-bottom: 16px; color: var(--ink);">"The Virtual CFO service was a game-changer during our Series A preparation. The partners were always available and deeply involved."</p>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background-image: url('assets/testimonial-2.png'); background-size: cover;"></div>
+          <div>
+            <div style="font-weight: 700; font-size: 13px;">Priya Desai</div>
+            <div style="font-size: 11px; color: var(--ink-light);">CEO, Greenfield Retail</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="final-cta" id="contact">
-    <div class="final-cta-eyebrow reveal visible">Begin the Conversation</div>
-    <h2 class="final-cta-title reveal reveal-delay-1 visible">
-      Let's simplify your
-      <span class="final-cta-script">financial complexity.</span>
-    </h2>
-    <p class="final-cta-sub reveal reveal-delay-2 visible">Schedule a complimentary 30-minute consultation with one of
-      our partners — no obligations, just clarity.</p>
-    <div class="final-cta-actions reveal reveal-delay-3 visible">
-      <a href="mailto:hello@kothaluruassociates.in" class="btn-primary">Schedule Consultation</a>
-      <a href="tel:+910000000000" class="btn-ghost">Call Our Office</a>
+  <!-- FINAL CTA (Dark Mode) -->
+  <section id="contact" style="background: #09152a; color: #fff; padding: var(--space-lg) 4vw; text-align: center; position: relative; overflow: hidden;">
+    <div class="reveal">
+      <span class="hero-eyebrow" style="color: rgba(255,255,255,0.5);">Let's Connect</span>
+      <h2 style="font-size: clamp(40px, 6vw, 72px); color: #fff; margin-bottom: 24px;">Simplify your<br><span class="editorial-script" style="color: var(--gold-light);">financial complexity.</span></h2>
+      <a href="mailto:hello@kothaluruassociates.in" class="btn-pill" style="background: #fff; color: var(--ink); border-color: #fff;">Schedule Consultation</a>
+    </div>
+    <!-- Watermark Logo -->
+    <div style="position: absolute; bottom: -5vw; left: 50%; transform: translateX(-50%); font-family: var(--sans); font-size: 15vw; font-weight: 800; color: rgba(255,255,255,0.02); white-space: nowrap; pointer-events: none;">
+      Raghavendra Kothuluru
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div>
-      <div class="footer-logo">Raghavendra Kothuluru and Associates</div>
-      <div class="footer-copy" style="margin-top:4px;">Chartered Accountants · Hyderabad, India</div>
+  <footer style="background: #050d1a; padding: 32px 4vw; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); font-size: 12px;">
+    <div>© 2026 Raghavendra Kothuluru and Associates. All rights reserved.</div>
+    <div style="display: flex; gap: 24px;">
+      <a href="#" style="color: inherit; text-decoration: none;">Privacy</a>
+      <a href="#" style="color: inherit; text-decoration: none;">Terms</a>
+      <a href="#" style="color: inherit; text-decoration: none;">LinkedIn</a>
     </div>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="#">Privacy</a>
-    </div>
-    <div class="footer-copy">© 2026 Raghavendra Kothuluru and Associates. All rights reserved.</div>
   </footer>
 
   <script>
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
+    // Reveal animations on scroll
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
+    }, { threshold: 0.1 });
 
-    // Nav scroll state
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 80) {
-        nav.style.background = 'rgba(248,250,253,0.98)';
-      } else {
-        nav.style.background = 'rgba(248,250,253,0.94)';
-      }
-    });
-  </script>
-
-
-  <script>
-    // ── HERO ALIVE EFFECTS ──
-
-    // 1. Split headline into hoverable letters
-    const headline = document.getElementById('heroHeadline');
-    if (headline) {
-      headline.innerHTML = headline.textContent.split('').map(ch =>
-        ch === ' ' ? ' ' : `<span class="letter">${ch}</span>`
-      ).join('');
-    }
-
-    // 2. Split eyebrow into hoverable chars
-    const eyebrow = document.getElementById('heroEyebrow');
-    if (eyebrow) {
-      eyebrow.innerHTML = eyebrow.textContent.split('').map(ch =>
-        ch === ' ' ? ' ' : `<span class="hero-eyebrow-char">${ch}</span>`
-      ).join('');
-    }
-
-    // 3. Cursor-tracking glow
-    const glow = document.getElementById('heroGlow');
-    const heroSection = document.querySelector('.hero');
-    if (glow && heroSection) {
-      heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        glow.style.left = (e.clientX - rect.left) + 'px';
-        glow.style.top = (e.clientY - rect.top) + 'px';
-      });
-      heroSection.addEventListener('mouseleave', () => {
-        glow.style.left = '50%';
-        glow.style.top = '40%';
-      });
-    }
-
-    // 4. Cycling word in hero sub paragraph
-    const cycleWords = ['clarity', 'compliance', 'precision', 'integrity', 'excellence'];
-    const heroPara = document.querySelector('.hero-sub');
-    if (heroPara) {
-      let wi = 0;
-      const original = heroPara.innerHTML;
-      // Replace "clarity" with a styled cycling span
-      heroPara.innerHTML = original.replace('clarity', `<span id="cycleWord" style="color:var(--gold);font-weight:600;display:inline-block;min-width:100px;transition:opacity 0.3s,transform 0.3s">${cycleWords[0]}</span>`);
-      const cycleEl = document.getElementById('cycleWord');
-      if (cycleEl) {
-        setInterval(() => {
-          cycleEl.style.opacity = '0';
-          cycleEl.style.transform = 'translateY(-6px)';
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    
+    // Logo entrance animation
+    setTimeout(() => {
+      const mainText = document.querySelector('.nav-logo-main');
+      if(mainText) {
+        const text = mainText.innerText;
+        mainText.innerHTML = '';
+        [...text].forEach((char, i) => {
+          const span = document.createElement('span');
+          span.innerText = char === ' ' ? '\u00A0' : char;
+          span.style.opacity = '0';
+          span.style.transform = 'translateY(10px)';
+          span.style.display = 'inline-block';
+          span.style.transition = `all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${i * 0.02}s`;
+          mainText.appendChild(span);
+          
           setTimeout(() => {
-            wi = (wi + 1) % cycleWords.length;
-            cycleEl.textContent = cycleWords[wi];
-            cycleEl.style.opacity = '1';
-            cycleEl.style.transform = 'translateY(0)';
-          }, 300);
-        }, 2200);
-        cycleEl.style.display = 'inline-block';
-        cycleEl.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            span.style.opacity = '1';
+            span.style.transform = 'translateY(0)';
+          }, 100);
+        });
       }
-    }
-
-    // 5. Magnetic button effect on hero CTAs
-    document.querySelectorAll('.hero-actions .btn-primary, .hero-actions .btn-ghost').forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const r = btn.getBoundingClientRect();
-        const x = e.clientX - r.left - r.width / 2;
-        const y = e.clientY - r.top - r.height / 2;
-        btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
-      });
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = '';
-      });
-    });
+    }, 500);
   </script>
 </body>
-
 </html>
