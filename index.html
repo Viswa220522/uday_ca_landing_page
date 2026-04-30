@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raghavendra Kothuluru and Associates — Chartered Accountants</title>
+  <title>Kothuluru and Associates — Chartered Accountants</title>
   <meta name="description" content="Trusted Chartered Accountants providing audit, tax, advisory, and business support services across India.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
       <img src="assets/CA India Logo.png" alt="CA India" class="nav-logo-ca">
       <div class="nav-logo-divider"></div>
       <div class="nav-logo-text">
-        <div class="nav-logo-main">Raghavendra Kothuluru and Associates</div>
+        <div class="nav-logo-main">Kothuluru and Associates</div>
         <div class="nav-logo-sub">Chartered Accountants</div>
       </div>
     </a>
@@ -65,23 +65,22 @@
     </div>
   </section>
 
-  <!-- METRICS -->
-  <section class="metrics">
+  <section class="metrics" id="metrics">
     <div class="container">
-      <div class="metric-item reveal visible">
-        <div class="metric-num">200<sup>+</sup></div>
+      <div class="metric-item reveal">
+        <div class="metric-num"><span class="count-up" data-target="200">0</span><sup>+</sup></div>
         <div class="metric-label">Clients Served</div>
       </div>
-      <div class="metric-item reveal visible delay-1">
-        <div class="metric-num">15<sup>+</sup></div>
+      <div class="metric-item reveal delay-1">
+        <div class="metric-num"><span class="count-up" data-target="15">0</span><sup>+</sup></div>
         <div class="metric-label">Years Experience</div>
       </div>
-      <div class="metric-item reveal visible delay-2">
-        <div class="metric-num">99<sup>%</sup></div>
+      <div class="metric-item reveal delay-2">
+        <div class="metric-num"><span class="count-up" data-target="99">0</span><sup>%</sup></div>
         <div class="metric-label">Compliance Accuracy</div>
       </div>
-      <div class="metric-item reveal visible delay-3">
-        <div class="metric-num">12<sup>+</sup></div>
+      <div class="metric-item reveal delay-3">
+        <div class="metric-num"><span class="count-up" data-target="12">0</span><sup>+</sup></div>
         <div class="metric-label">Industries Covered</div>
       </div>
     </div>
@@ -100,7 +99,7 @@
       <div>
         <div class="eyebrow reveal">About the Firm</div>
         <h2 class="section-title reveal delay-1">Advisory-first.<br><em>Partner-led.</em></h2>
-        <p class="body-text reveal delay-2">Raghavendra Kothuluru and Associates is built on a singular belief: every business deserves access to the kind of financial clarity that drives confident decisions. Our senior professionals are directly involved in every engagement.</p>
+        <p class="body-text reveal delay-2">Kothuluru and Associates is built on a singular belief: every business deserves access to the kind of financial clarity that drives confident decisions. Our senior professionals are directly involved in every engagement.</p>
         <div class="pill-tags reveal delay-3">
           <span class="pill-tag">Personalized attention</span>
           <span class="pill-tag">Proven track record</span>
@@ -184,7 +183,7 @@
       </div>
       <div class="testimonial-cards">
         <div class="testimonial-card reveal">
-          <p class="testimonial-text">Raghavendra Kothuluru and Associates brought the kind of rigour and clarity we never experienced with our previous advisors. Our compliance is airtight and our financials finally tell a story.</p>
+          <p class="testimonial-text">Kothuluru and Associates brought the kind of rigour and clarity we never experienced with our previous advisors. Our compliance is airtight and our financials finally tell a story.</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background-image: url('assets/testimonial-1.png');"></div>
             <div>
@@ -229,13 +228,13 @@
         <a href="mailto:hello@kothaluruassociates.in" class="btn-primary" style="background:#fff; color:var(--ink); border-color:#fff;">Schedule Consultation</a>
       </div>
     </div>
-    <div class="cta-watermark">Raghavendra Kothuluru</div>
+    <div class="cta-watermark">Kothuluru</div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div>© 2026 Raghavendra Kothuluru and Associates. All rights reserved.</div>
+      <div>© 2026 Kothuluru and Associates. All rights reserved.</div>
       <div class="footer-links">
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
@@ -251,10 +250,27 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Nav scroll effect
-    window.addEventListener('scroll', () => {
-      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
-    });
+    // Count up animation
+    const countUpObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target'), 10);
+          const duration = 2000;
+          const start = performance.now();
+          function step(timestamp) {
+            const progress = Math.min((timestamp - start) / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+            el.textContent = Math.floor(ease * target);
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = target;
+          }
+          requestAnimationFrame(step);
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.count-up').forEach(el => countUpObserver.observe(el));
 
     // Mobile nav toggle
     document.getElementById('navToggle').addEventListener('click', () => {
@@ -275,6 +291,58 @@
         requestAnimationFrame(() => requestAnimationFrame(() => { s.style.opacity='1'; s.style.transform='translateY(0)'; }));
       });
     }, 300);
+
+    // ── DYNAMIC ACTIVE STATE ──
+    (function() {
+      const navItems = document.querySelectorAll('.nav-links > li');
+      const sections = ['home','about','services','testimonials'];
+      let currentActive = document.querySelector('.nav-links > li.active');
+
+      // Set active by section id
+      function setActiveBySection(id) {
+        navItems.forEach(li => li.classList.remove('active'));
+        navItems.forEach(li => {
+          const href = li.querySelector('a')?.getAttribute('href');
+          if (href && href.includes(id)) li.classList.add('active');
+        });
+      }
+
+      // Hover: temporarily move active
+      navItems.forEach(li => {
+        li.addEventListener('mouseenter', () => {
+          navItems.forEach(n => n.classList.remove('active'));
+          li.classList.add('active');
+        });
+      });
+
+      // Mouse leave nav-links: restore scroll-based active
+      const navLinksEl = document.querySelector('.nav-links');
+      navLinksEl.addEventListener('mouseleave', () => {
+        // Find which section is visible
+        let found = 'home';
+        sections.forEach(id => {
+          const sec = document.getElementById(id);
+          if (sec && sec.getBoundingClientRect().top <= 120) found = id;
+        });
+        setActiveBySection(found);
+      });
+
+      // Scroll: update active based on visible section
+      window.addEventListener('scroll', () => {
+        let found = 'home';
+        sections.forEach(id => {
+          const sec = document.getElementById(id);
+          if (sec && sec.getBoundingClientRect().top <= 120) found = id;
+        });
+        // Only update if not hovering over nav
+        if (!navLinksEl.matches(':hover')) {
+          setActiveBySection(found);
+        }
+      }, { passive: true });
+
+      // Initial
+      setActiveBySection('home');
+    })();
   </script>
 </body>
 </html>

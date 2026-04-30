@@ -1,6 +1,6 @@
-# Raghavendra Kothuluru and Associates - Landing Page
+# Kothuluru and Associates - Landing Page
 
-A high-end, professionally-designed landing page for "Raghavendra Kothuluru and Associates," a Chartered Accountant firm. Sophisticated Navy Blue design system optimized for instant load and zero dependencies.
+A high-end, professionally-designed landing page for "Kothuluru and Associates," a Chartered Accountant firm. Sophisticated Navy Blue design system optimized for instant load and zero dependencies.
 
 ## 🚀 How to Run
 Self-contained, no build steps:
@@ -19,15 +19,16 @@ Self-contained, no build steps:
 **Single Navy Blue Identity**: Professional, trustworthy aesthetic. All colors/spacing via CSS custom properties (`:root`).
 
 **Visual Features**:
-- Magnetic button pull on CTAs
-- Cursor-tracking radial glow in hero section
-- Letter-split hover effects on headlines
-- Word cycling animation in hero subtitle
-- Scroll-triggered staggered reveals across all sections
-- Nav background opacity transition on scroll
+- **Sharp Glass Navigation**: Rectangular centered menu with backdrop-filter blur.
+- **Animated Metrics**: Numbers featuring a "flowing gradient" wind effect and scroll-triggered count-up animation.
+- **Magnetic Interactions**: Magnetic button pull on CTAs.
+- **Cinematic Hero**: Cursor-tracking radial glow and letter-split hover effects.
+- **Responsive Staggered Reveals**: Scroll-driven entrance animations across all sections.
 
 ## 📂 Project Structure
-- `index.html` — Complete landing page (HTML + CSS + JS in one file)
-- `assets/` — CA India logo
-- `CLAUDE.md` — Developer guide and technical notes
-- `README.md` — This file
+- `index.html` — Main landing page.
+- `styles.css` — Global design system and landing page styles.
+- `service-styles.css` — Unified styles for service detail pages.
+- `services/` — Directory containing 6 service-specific HTML pages.
+- `assets/` — Project imagery and branding.
+- `CLAUDE.md` — Technical implementation details.
