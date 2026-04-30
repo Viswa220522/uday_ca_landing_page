@@ -1038,6 +1038,11 @@ footer a:hover {
 }
 
 @media (min-width: 750px) and (max-width: 1199px) {
+  #mainNav {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .nav-right-group {
     display: none;
   }
@@ -1046,6 +1051,8 @@ footer a:hover {
     position: static;
     transform: none;
     margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
     white-space: nowrap;
   }
 
