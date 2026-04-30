@@ -195,6 +195,12 @@ nav {
   border-radius: 0;
 }
 
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* Logo */
 .nav-logo {
   display: flex;
@@ -400,19 +406,24 @@ nav {
 /* Mobile nav */
 .nav-toggle {
   display: none;
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.nav-toggle span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: #fff;
-  margin: 5px 0;
-  transition: var(--transition);
+.nav-toggle .material-symbols-outlined {
+  font-size: 28px;
+  color: var(--ink);
+  transition: all 0.3s ease;
+}
+
+.nav-toggle:hover .material-symbols-outlined {
+  color: var(--gold);
+  transform: scale(1.1);
 }
 
 /* ── HERO ── */

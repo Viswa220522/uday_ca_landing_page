@@ -40,6 +40,12 @@ nav {
   border-radius: 0;
 }
 
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
 .nav-logo-ca { height: 34px; width: auto; }
 .nav-logo-divider {
@@ -124,6 +130,27 @@ nav {
 .nav-cta::after { content: '\2197'; font-size: 14px; transition: transform 0.3s; }
 .nav-cta:hover { border-color: var(--ink); background: rgba(10, 22, 40, 0.04); }
 .nav-cta:hover::after { transform: translate(2px, -2px); }
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nav-toggle .material-symbols-outlined {
+  font-size: 28px;
+  color: var(--ink);
+  transition: all 0.3s ease;
+}
+.nav-toggle:hover .material-symbols-outlined {
+  color: var(--gold);
+  transform: scale(1.1);
+}
 
 /* HERO */
 .service-hero {
