@@ -36,11 +36,14 @@
         </div>
       </li>
       <li><a href="#testimonials">Testimonials</a></li>
+      <li id="mobileCtaContainer"></li>
     </ul>
-    <a href="#contact" class="nav-cta">Book Consultation</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right-group">
+      <div id="desktopCtaContainer"><a href="#contact" class="nav-cta" id="mainCtaButton">Book Consultation</a></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -273,8 +276,53 @@
     document.querySelectorAll('.count-up').forEach(el => countUpObserver.observe(el));
 
     // Mobile nav toggle
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('mainNav').classList.toggle('menu-open');
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+            function handleCtaPosition() {
+      const rightGroup = document.getElementById('desktopCtaContainer');
+      const mobileContainer = document.getElementById('mobileCtaContainer');
+      if (!rightGroup || !mobileContainer) return;
+      
+      const isDesktop = window.innerWidth >= 1200;
+      
+      if (isDesktop) {
+        if (!document.getElementById('mainCtaButton')) {
+          rightGroup.innerHTML = '<a href="#contact" class="nav-cta" id="mainCtaButton">Book Consultation</a>';
+          mobileContainer.innerHTML = '';
+          console.log('[Navbar] CTA Active: Desktop Button (Right)');
+        }
+      } else {
+        if (!document.getElementById('mobileCtaLink')) {
+          mobileContainer.innerHTML = '<a href="#contact" id="mobileCtaLink">Book Consultation ?</a>';
+          rightGroup.innerHTML = '';
+          console.log('[Navbar] CTA Active: Plain Nav Link (Inside Menu)');
+        }
+      }
+    }
+    window.addEventListener('resize', handleCtaPosition);
+    handleCtaPosition();
+
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mainNav.classList.toggle('menu-open');
+    });
+
+    // Close menu on click outside
+    document.addEventListener('click', (e) => {
+      if (!mainNav.contains(e.target) && mainNav.classList.contains('menu-open')) {
+        mainNav.classList.remove('menu-open');
+      }
+    });
+
+    // Handle mobile dropdowns
+    document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        if (window.innerWidth < 1200) {
+          e.preventDefault();
+          trigger.closest('.dropdown').classList.toggle('active');
+        }
+      });
     });
 
     // Animated logo text
