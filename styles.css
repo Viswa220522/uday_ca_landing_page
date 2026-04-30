@@ -318,7 +318,7 @@ nav {
 }
 
 .nav-cta::after {
-  content: '↗';
+  content: '\2197';
   font-size: 14px;
   transition: transform 0.3s;
 }

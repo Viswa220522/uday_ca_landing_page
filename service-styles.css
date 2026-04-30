@@ -120,7 +120,7 @@ nav {
   background: transparent; flex-shrink: 0;
   transition: border-color 0.3s, background 0.3s;
 }
-.nav-cta::after { content: '↗'; font-size: 14px; transition: transform 0.3s; }
+.nav-cta::after { content: '\2197'; font-size: 14px; transition: transform 0.3s; }
 .nav-cta:hover { border-color: var(--ink); background: rgba(10, 22, 40, 0.04); }
 .nav-cta:hover::after { transform: translate(2px, -2px); }
 
