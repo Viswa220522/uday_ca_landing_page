@@ -73,4 +73,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Animated logo text
+  setTimeout(() => {
+    const el = document.querySelector('.nav-logo-main');
+    if (!el) return;
+    const txt = el.innerText;
+    el.innerHTML = '';
+    [...txt].forEach((c, i) => {
+      const s = document.createElement('span');
+      s.textContent = c === ' ' ? ' ' : c;
+      s.style.cssText = `opacity:0;transform:translateY(8px);display:inline-block;transition:all 0.35s cubic-bezier(0.16,1,0.3,1) ${i*0.018}s`;
+      el.appendChild(s);
+      requestAnimationFrame(() => requestAnimationFrame(() => { s.style.opacity='1'; s.style.transform='translateY(0)'; }));
+    });
+  }, 300);
 });

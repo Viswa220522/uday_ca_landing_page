@@ -6,10 +6,10 @@
   <title>Startup & Company Setup — Kothuluru and Associates</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../service-styles.css?v=2">
+  <link rel="stylesheet" href="../service-styles.css?v=3">
 </head>
 <body>
-  <nav>
+    <nav id="mainNav">
     <a href="../index.html" class="nav-logo">
       <img src="../assets/CA India Logo.png" alt="CA India" class="nav-logo-ca">
       <div class="nav-logo-divider"></div>
@@ -22,7 +22,7 @@
       <li><a href="../index.html#home">Home</a></li>
       <li><a href="../index.html#about">About Us</a></li>
       <li class="dropdown active">
-        <a href="../index.html#services" class="dropdown-trigger">Practice Areas ?</a>
+        <a href="../index.html#services" class="dropdown-trigger">Practice Areas &#9662;</a>
         <div class="dropdown-menu">
           <a href="audit-assurance.html">Audit &amp; Assurance</a>
           <a href="tax-regulatory.html">Tax &amp; Regulatory</a>
@@ -35,7 +35,12 @@
       <li><a href="../index.html#testimonials">Testimonials</a></li>
       <li id="mobileCtaContainer"></li>
     </ul>
-    <a href="../index.html#contact" class="nav-cta">Book Consultation</a>
+    <div class="nav-right-group">
+      <div id="desktopCtaContainer"><a href="../index.html#contact" class="nav-cta" id="mainCtaButton">Book Consultation</a></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <section class="service-hero" style="background-image: url('../assets/advisory-1.png');">
@@ -108,6 +113,6 @@
   </footer>
 
 
-  <script src="../service-scripts.js?v=2"></script>
+  <script src="../service-scripts.js?v=3"></script>
 </body>
 </html>
