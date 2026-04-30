@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en"
   style="--script-opacity: 0.65; --section-pad: 120px; --metric-pad: 48px; --card-pad: 44px; --why-pad: 40px;">
 
@@ -180,6 +180,18 @@
       padding: 120px 64px 50px;
       position: relative;
       overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/hero-bg.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.05;
+      mix-blend-mode: multiply;
+      pointer-events: none;
     }
 
     .hero::before {
@@ -553,15 +565,21 @@
     .about-visual {
       position: relative;
       aspect-ratio: 4/5;
-      background: repeating-linear-gradient(-45deg,
-          rgba(255, 255, 255, 0.03),
-          rgba(255, 255, 255, 0.03) 1px,
-          transparent 1px,
-          transparent 12px);
+      background-image: url('assets/about-team.png');
+      background-size: cover;
+      background-position: center;
       border: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+    }
+
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(13, 31, 60, 0.8) 100%);
     }
 
     .about-visual-label {
@@ -715,6 +733,21 @@
       color: var(--ink-light);
       margin-top: 2px;
       letter-spacing: 0.04em;
+      }
+
+    .testimonial-footer {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .testimonial-profile {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid var(--border);
     }
 
     /* ── FINAL CTA ── */
@@ -1250,8 +1283,8 @@
         </div>
       </div>
     </div>
-    <div class="about-visual reveal reveal-delay-2 visible">
-      <div class="about-visual-label">Partners &amp; Team<br>[ photo ]</div>
+    <div class="about-visual reveal reveal-delay-2">
+      <div class="about-visual-label">Raghavendra Kothuluru and Associates<br>Core Partners & Team</div>
       <div class="about-visual-badge">
         <div class="about-visual-badge-num">15+</div>
         <div class="about-visual-badge-text">Years of<br>Excellence</div>
@@ -1310,24 +1343,39 @@
             experienced with our previous advisors. Our compliance is airtight and our financials finally tell a story.
           </p>
           <div class="testimonial-divider"></div>
-          <div class="testimonial-name">Ravi Shankar M.</div>
-          <div class="testimonial-role">Founder, TechScale Ventures</div>
+          <div class="testimonial-footer">
+            <div class="testimonial-profile" style="background-image: url('assets/testimonial-1.png');"></div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">Ravi Shankar M.</div>
+              <div class="testimonial-role">Founder, TechScale Ventures</div>
+            </div>
+          </div>
         </div>
         <div class="testimonial-card reveal reveal-delay-1 visible">
           <div class="testimonial-quote">"</div>
           <p class="testimonial-text">The Virtual CFO service was a game-changer during our Series A preparation. The
             partners were always available, deeply involved, and genuinely cared about our outcome.</p>
           <div class="testimonial-divider"></div>
-          <div class="testimonial-name">Priya Desai</div>
-          <div class="testimonial-role">CEO, Greenfield Retail Pvt. Ltd.</div>
+          <div class="testimonial-footer">
+            <div class="testimonial-profile" style="background-image: url('assets/testimonial-2.png');"></div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">Priya Desai</div>
+              <div class="testimonial-role">CEO, Greenfield Retail Pvt. Ltd.</div>
+            </div>
+          </div>
         </div>
         <div class="testimonial-card reveal reveal-delay-2 visible">
           <div class="testimonial-quote">"</div>
           <p class="testimonial-text">Exceptional tax planning saved us significantly this year. What impressed me most
             was their proactive approach — they flagged opportunities before we even asked.</p>
           <div class="testimonial-divider"></div>
-          <div class="testimonial-name">Anil Kothari</div>
-          <div class="testimonial-role">Director, Kothari Industries</div>
+          <div class="testimonial-footer">
+            <div class="testimonial-profile" style="background-image: url('assets/testimonial-3.png');"></div>
+            <div class="testimonial-info">
+              <div class="testimonial-name">Anil Kothari</div>
+              <div class="testimonial-role">Director, Kothari Industries</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
